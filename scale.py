@@ -2,6 +2,22 @@
 import time
 import os
 import RPi.GPIO as GPIO
+'''
+This is mostly from:
+https://learn.adafruit.com/
+   reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi/
+   script
+
+(git://gist.github.com/3151375.git)
+
+With some modifications by me that should have been other
+commits, but weren't, so sorry, you'll have to diff it yourself
+if you want to see what changed.
+
+I have no idea what the license is on the original, so I have no
+idea what the license on this is.  Personally, I don't care, but
+Adafruit might.
+'''
  
 GPIO.setmode(GPIO.BCM)
 DEBUG = 1
