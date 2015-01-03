@@ -5,6 +5,7 @@
 * Readings
 
   - the readings are all very high; I think it needs a resistor, maybe.
+    - nope, this was wrong
 
 * Wiring
 
@@ -12,3 +13,7 @@
     pin 1, and this is where I think the resistor should go to ease up on the
     range.  Or something.  (This is in addition to the wriring instructions at 
     [[https://learn.adafruit.com/reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi/connecting-the-cobbler-to-a-mcp3008][learn.adafruit]]
+    - this was also wrong
+
+  - the correct thing is that it needed a pull-down resistor, as mentioned at
+    https://learn.adafruit.com/force-sensitive-resistor-fsr/using-an-fsr
