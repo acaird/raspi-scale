@@ -1,0 +1,24 @@
+#+TITLE: Making a lame scale with a RaspberryPI and a force-sensitive resistor
+#+AUTHOR: Andrew Caird
+#+EMAIL: acaird@gmail.com
+
+* Motivation
+
+  I wanted to make a little scale for my jar of coffee beans so I can plot
+  the weight of it over time and note when it is low so I can buy fresh
+  beans.
+
+* The Script
+
+  This script was taken from [[https://learn.adafruit.com/reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi/connecting-the-cobbler-to-a-mcp3008][learn.adafruit]] 
+  and is also available at [[https://gist.github.com/ladyada/3151375#file-adafruit_mcp3008-py]]
+  and modified a little to work with the FSR and not the potentiometer in their script.
+
+* The Wiring
+
+  Pretty soon I'll put up a diagram or something of the wiring.
+
+* The License
+
+  I don't know what the license on Adafruit's script is, but mine follows that.  If there isn't a license
+  on their script, mine is [[http://creativecommons.org/licenses/by-sa/4.0/][CC By-SA]].
