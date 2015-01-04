@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import time
+import datetime
 import os
 import RPi.GPIO as GPIO
 '''
@@ -80,7 +81,7 @@ GPIO.setup(SPICS, GPIO.OUT)
 fsr_adc = 0;
  
 last_read = 0       # this keeps track of the last FSR value
-tolerance = 20      # to keep from being jittery we'll only change 
+tolerance = 4.5     # to keep from being jittery we'll only change 
                     # when the FSR has moved more than this many 'counts'
  
 while True:
@@ -96,9 +97,10 @@ while True:
         if ( abs(fsr_change) > tolerance ):
                 fsr_changed = True
         	if DEBUG:
-               		print "fsr:", fsr
-                	print "\tlast_read", last_read
-			print "\tfsr_change",fsr_change
+			print '{0}\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}'.format(datetime.datetime.now(),
+												fsr,
+												last_read,
+												fsr_change)
 		last_read = fsr
  
         time.sleep(2)
