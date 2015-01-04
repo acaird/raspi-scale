@@ -21,6 +21,7 @@ Adafruit might.
 '''
  
 GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False) # to stop the "This channel is already in use" warning
 DEBUG = 1
  
 # read SPI data from MCP3008 chip, 8 possible adc's (0 thru 7)
