@@ -25,9 +25,10 @@
   Library]])
 
   To load the files in the ~fritzing-files~ directory into Fritzing
-  directly, although you'll be prompted to convert it to a ~.fzz~
-  file, or you can make the ~.fzz~ file yourself from the files in
-  that directory by going into it and typing:
+  directly you can open the ~.fz~ file, although you'll be prompted to
+  convert it to a ~.fzz~ file, or you can make the ~.fzz~ file
+  yourself from the files in that directory by going into it and
+  typing:
   #+BEGIN_EXAMPLE
      zip ../lamescale.fzz *
   #+END_EXAMPLE
