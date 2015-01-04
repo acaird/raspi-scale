@@ -10,13 +10,19 @@
 
 * The Script
 
-  This script was taken from [[https://learn.adafruit.com/reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi/connecting-the-cobbler-to-a-mcp3008][learn.adafruit]] 
+  This script was taken from [[https://learn.adafruit.com/reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi/connecting-the-cobbler-to-a-mcp3008][learn.adafruit]]
   and is also available at [[https://gist.github.com/ladyada/3151375#file-adafruit_mcp3008-py]]
   and modified a little to work with the FSR and not the potentiometer in their script.
 
 * The Wiring
 
-  Pretty soon I'll put up a diagram or something of the wiring.
+  The breadboard layout looks like this:
+
+  #+ATTR_HTML: :width 50%
+   [[file:images/lamescale_bb.pdf][file:images/lamescale_bb.png]]
+
+  (Drawn with the totally fun [[http://fritzing.org/home/][Fritzing]] and the [[https://github.com/adafruit/Fritzing-Library][Adafruit Fritzing
+  Library]])
 
 * The License
 
