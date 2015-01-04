@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" width="34.01702" height="357.41147" viewBox="0 0 27.213617 285.92917">
+ <desc id="desc5216"/>
+ <metadata id="metadata5544"/>
+ <defs id="defs5542"/>
+ <g transform="translate(0.587225 2.423174)" id="schematic">
+  <line x2="11.166404" gorn="0.1.0" id="connector0pin" y1="0.521593" y2="0.521593" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="0.542246" id="connector0terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,1.643 14.1,3.6 9.898,5.556" id="polyline5223" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.5" id="connector1pin" y1="7.715358" y2="7.715358" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="7.730036" id="connector1terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,8.843 14.1,10.8 9.898,12.756" id="polyline5230" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.10" id="connector2pin" y1="14.909122" y2="14.909122" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="14.917826" id="connector2terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,16.043 14.1,18 9.898,19.956" id="polyline5238" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.15" id="connector3pin" y1="22.10289" y2="22.10289" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="22.10562" id="connector3terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,23.243 14.1,25.2 9.898,27.156" id="polyline5246" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.20" id="connector4pin" y1="29.29665" y2="29.29665" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="29.29341" id="connector4terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,30.443 14.1,32.4 9.898,34.356" id="polyline5254" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.25" id="connector5pin" y1="36.490417" y2="36.490417" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="36.481205" id="connector5terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,37.643 14.1,39.6 9.898,41.556" id="polyline5262" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.30" id="connector6pin" y1="43.684181" y2="43.684181" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="43.668991" id="connector6terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,44.843 14.1,46.8 9.898,48.756" id="polyline5270" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.35" id="connector7pin" y1="50.877949" y2="50.877949" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="50.856781" id="connector7terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,52.043 14.1,54 9.898,55.956" id="polyline5278" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.40" id="connector8pin" y1="58.07171" y2="58.07171" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="58.04458" id="connector8terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,59.243 14.1,61.2 9.898,63.156" id="polyline5286" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.45" id="connector9pin" y1="65.26548" y2="65.26548" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="65.23236" id="connector9terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,66.443 14.1,68.4 9.898,70.356" id="polyline5294" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.50" id="connector10pin" y1="72.45924" y2="72.45924" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="72.42015" id="connector10terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,73.643 14.1,75.6 9.898,77.556" id="polyline5302" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.55" id="connector11pin" y1="79.65301" y2="79.65301" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="79.60795" id="connector11terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,80.843 14.1,82.8 9.898,84.756" id="polyline5310" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.60" id="connector12pin" y1="86.84677" y2="86.84677" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="86.79574" id="connector12terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,88.043 14.1,90 9.898,91.956" id="polyline5318" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.65" id="connector13pin" y1="94.04054" y2="94.04054" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="93.98353" id="connector13terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,95.243 14.1,97.2 9.898,99.156" id="polyline5326" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.70" id="connector14pin" y1="101.23431" y2="101.23431" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="101.17132" id="connector14terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,102.443 14.1,104.4 9.898,106.356" id="polyline5334" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.75" id="connector15pin" y1="108.42806" y2="108.42806" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="108.3591" id="connector15terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,109.643 14.1,111.6 9.898,113.556" id="polyline5342" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.80" id="connector16pin" y1="115.62183" y2="115.62183" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="115.54689" id="connector16terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,116.843 14.1,118.8 9.898,120.756" id="polyline5350" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.85" id="connector17pin" y1="122.8156" y2="122.8156" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="122.73468" id="connector17terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,124.043 14.1,126 9.898,127.956" id="polyline5358" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.90" id="connector18pin" y1="130.00934" y2="130.00934" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="129.92247" id="connector18terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,131.243 14.1,133.2 9.898,135.156" id="polyline5366" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.95" id="connector19pin" y1="137.20309" y2="137.20309" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="137.11026" id="connector19terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,138.443 14.1,140.4 9.898,142.356" id="polyline5374" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.100" id="connector20pin" y1="144.39688" y2="144.39688" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="144.29805" id="connector20terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,145.643 14.1,147.6 9.898,149.556" id="polyline5382" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.105" id="connector21pin" y1="151.59064" y2="151.59064" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="151.48582" id="connector21terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,152.843 14.1,154.8 9.898,156.756" id="polyline5390" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.110" id="connector22pin" y1="158.78441" y2="158.78441" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="158.67363" id="connector22terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,160.043 14.1,162 9.898,163.956" id="polyline5398" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.115" id="connector23pin" y1="165.97816" y2="165.97816" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="165.86142" id="connector23terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,167.243 14.1,169.2 9.898,171.156" id="polyline5406" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.120" id="connector24pin" y1="173.17192" y2="173.17192" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="173.04921" id="connector24terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,174.443 14.1,176.4 9.898,178.356" id="polyline5414" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.125" id="connector25pin" y1="180.36569" y2="180.36569" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="180.237" id="connector25terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,181.643 14.1,183.6 9.898,185.556" id="polyline5422" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.130" id="connector26pin" y1="187.55946" y2="187.55946" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="187.42479" id="connector26terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,188.843 14.1,190.8 9.898,192.756" id="polyline5430" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.135" id="connector27pin" y1="194.75322" y2="194.75322" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="194.61258" id="connector27terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,196.043 14.1,198 9.898,199.956" id="polyline5438" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.140" id="connector28pin" y1="201.94699" y2="201.94699" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="201.80037" id="connector28terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,203.243 14.1,205.2 9.898,207.156" id="polyline5446" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.145" id="connector29pin" y1="209.14073" y2="209.14073" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="208.98816" id="connector29terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,210.443 14.1,212.4 9.898,214.356" id="polyline5454" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.150" id="connector30pin" y1="216.33453" y2="216.33453" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="216.17595" id="connector30terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,217.643 14.1,219.6 9.898,221.556" id="polyline5462" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.155" id="connector31pin" y1="223.52827" y2="223.52827" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="223.36374" id="connector31terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,224.843 14.1,226.8 9.898,228.756" id="polyline5470" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.160" id="connector32pin" y1="230.72205" y2="230.72205" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="230.55154" id="connector32terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,232.043 14.1,234 9.898,235.956" id="polyline5478" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.165" id="connector33pin" y1="237.9158" y2="237.9158" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="237.73933" id="connector33terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,239.243 14.1,241.2 9.898,243.156" id="polyline5486" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.170" id="connector34pin" y1="245.10956" y2="245.10956" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="244.92711" id="connector34terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,246.443 14.1,248.4 9.898,250.356" id="polyline5494" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.175" id="connector35pin" y1="252.30334" y2="252.30334" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="252.11491" id="connector35terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,253.643 14.1,255.6 9.898,257.556" id="polyline5502" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.180" id="connector36pin" y1="259.4971" y2="259.4971" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="259.3027" id="connector36terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,260.843 14.1,262.8 9.898,264.756" id="polyline5510" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.185" id="connector37pin" y1="266.69086" y2="266.69086" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="266.49048" id="connector37terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,268.043 14.1,270 9.898,271.956" id="polyline5518" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.190" id="connector38pin" y1="273.88464" y2="273.88464" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="273.67825" id="connector38terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,275.243 14.1,277.2 9.898,279.156" id="polyline5526" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <line x2="11.166404" gorn="0.1.195" id="connector39pin" y1="281.0784" y2="281.0784" x1="1.058123" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.567022"/>
+  <rect width="1.544082" height="0.207647" x="-0.587225" y="280.86606" id="connector39terminal" fill="none" stroke-width="0.8"/>
+  <polyline points="9.898,282.443 14.1,284.4 9.898,286.356" id="polyline5534" transform="matrix(-1 0 0 1 36.17439 -3.2)" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7"/>
+  <g transform="translate(6.556793 -3.192873)" id="g9214">
+   <text x="0.779981" y="2.58" id="text5226" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">1 - 3V3</text>
+   <text x="0.191602" y="9.78" id="text5234" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">2 - 5V</text>
+   <text x="2.745313" y="16.98" id="text5242" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">3 - GPIO 2</text>
+   <text x="0.280713" y="24.18" id="text5250" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">4 - 5V</text>
+   <text x="2.685498" y="31.379999" id="text5258" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">5 - GPIO 3</text>
+   <text x="1.398877" y="38.580002" id="text5266" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">6 - GND</text>
+   <text x="2.735547" y="45.779999" id="text5274" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">7 - GPIO 4</text>
+   <text x="3.404492" y="52.98" id="text5282" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">8 - GPIO 14</text>
+   <text x="1.407422" y="60.18" id="text5290" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">9 - GND</text>
+   <text x="4.00508" y="67.38" id="text5298" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">10 - GPIO 15</text>
+   <text x="4.00508" y="74.58" id="text5306" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">11 - GPIO 17</text>
+   <text x="4.00508" y="81.78" id="text5314" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">12 - GPIO 18</text>
+   <text x="4.00508" y="88.980003" id="text5322" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">13 - GPIO 27</text>
+   <text x="2.00801" y="96.18" id="text5330" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">14 - GND</text>
+   <text x="4.00508" y="103.38" id="text5338" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">15 - GPIO 22</text>
+   <text x="4.00508" y="110.58" id="text5346" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">16 - GPIO 23</text>
+   <text x="5.05" y="117.78" id="text5354" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">17 - 3.3V</text>
+   <text x="4.00508" y="124.98" id="text5362" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">18 - GPIO 24</text>
+   <text x="4.00508" y="132.17999" id="text5370" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">19 - GPIO 10</text>
+   <text x="2.108106" y="139.38" id="text5378" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">20 - GND</text>
+   <text x="3.416699" y="146.58" id="text5386" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">21 - GPIO 9</text>
+   <text x="4.105176" y="153.78" id="text5394" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">22 - GPIO 25</text>
+   <text x="4.105176" y="160.98" id="text5402" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">23 - GPIO 11</text>
+   <text x="3.416699" y="168.17999" id="text5410" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">24 - GPIO 8</text>
+   <text x="2.108106" y="175.38" id="text5418" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">25 - GND</text>
+   <text x="3.416699" y="182.58" id="text5426" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">26 - GPIO 7</text>
+   <text x="2.779492" y="189.78" id="text5434" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">27 - ID_SD</text>
+   <text x="2.679395" y="196.98" id="text5442" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">28 - ID_SC</text>
+   <text x="3.416699" y="204.17999" id="text5450" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">29 - GPIO 5</text>
+   <text x="2.125195" y="211.38" id="text5458" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">30 - GND</text>
+   <text x="3.433789" y="218.58" id="text5466" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">31 - GPIO 6</text>
+   <text x="4.122266" y="225.78" id="text5474" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">32 - GPIO 12</text>
+   <text x="4.122266" y="232.98" id="text5482" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">33 - GPIO 13</text>
+   <text x="2.125195" y="240.17999" id="text5490" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">34 - GND</text>
+   <text x="4.122266" y="247.38" id="text5498" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">35 - GPIO 19</text>
+   <text x="4.122266" y="254.58" id="text5506" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">36 - GPIO 16</text>
+   <text x="4.122266" y="261.78" id="text5514" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">37 - GPIO 26</text>
+   <text x="4.122266" y="268.98001" id="text5522" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">38 - GPIO 20</text>
+   <text x="2.125195" y="276.17999" id="text5530" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">39 - GND</text>
+   <text x="4.194287" y="283.38" id="text5538" fill="#8c8c8c" font-family="Droid Sans" text-anchor="middle" font-size="2.5">40 - GPIO 21</text>
+  </g>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="0.542245" id="connector41terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="7.730036" id="connector42terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="14.917825" id="connector43terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="22.10562" id="connector44terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="29.29341" id="connector45terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="36.481205" id="connector46terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="43.668991" id="connector47terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="50.856781" id="connector48terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="58.04458" id="connector49terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="65.23236" id="connector50terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="72.42015" id="connector51terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="79.60796" id="connector52terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="86.79573" id="connector53terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="93.98354" id="connector54terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="101.17132" id="connector55terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="108.35911" id="connector56terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="115.54689" id="connector57terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="122.73468" id="connector58terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="129.92247" id="connector59terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="137.11026" id="connector60terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="144.29805" id="connector61terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="151.48582" id="connector62terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="158.67363" id="connector63terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="165.86142" id="connector64terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="173.04921" id="connector65terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="180.237" id="connector66terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="187.42479" id="connector67terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="194.61258" id="connector68terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="201.80037" id="connector69terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="208.98817" id="connector70terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="216.17593" id="connector71terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="223.36374" id="connector72terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="230.55154" id="connector73terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="237.73935" id="connector74terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="244.92711" id="connector75terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="252.1149" id="connector76terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="259.30267" id="connector77terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="266.49048" id="connector78terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="273.67825" id="connector79terminal" fill="none" stroke-width="0.8"/>
+  <rect width="1.544082" height="0.207647" x="21.01278" y="280.86603" id="connector80terminal" fill="none" stroke-width="0.8"/>
+  <line x1="10.04227" y2="0.550727" y1="0.550727" id="connector41pin" gorn="0.1.0" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="7.742997" y1="7.742997" id="connector42pin" gorn="0.1.5" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="14.935267" y1="14.935267" id="connector43pin" gorn="0.1.10" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="22.12754" y1="22.12754" id="connector44pin" gorn="0.1.15" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="29.319811" y1="29.319811" id="connector45pin" gorn="0.1.20" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="36.512081" y1="36.512081" id="connector46pin" gorn="0.1.25" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="43.70435" y1="43.70435" id="connector47pin" gorn="0.1.30" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="50.896626" y1="50.896626" id="connector48pin" gorn="0.1.35" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="58.08889" y1="58.08889" id="connector49pin" gorn="0.1.40" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="65.28117" y1="65.28117" id="connector50pin" gorn="0.1.45" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="72.47343" y1="72.47343" id="connector51pin" gorn="0.1.50" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="79.66571" y1="79.66571" id="connector52pin" gorn="0.1.55" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="86.85798" y1="86.85798" id="connector53pin" gorn="0.1.60" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="94.05025" y1="94.05025" id="connector54pin" gorn="0.1.65" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="101.24252" y1="101.24252" id="connector55pin" gorn="0.1.70" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="108.43478" y1="108.43478" id="connector56pin" gorn="0.1.75" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="115.62706" y1="115.62706" id="connector57pin" gorn="0.1.80" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="122.81934" y1="122.81934" id="connector58pin" gorn="0.1.85" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="130.01158" y1="130.01158" id="connector59pin" gorn="0.1.90" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="137.20384" y1="137.20384" id="connector60pin" gorn="0.1.95" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="144.39613" y1="144.39613" id="connector61pin" gorn="0.1.100" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="151.58839" y1="151.58839" id="connector62pin" gorn="0.1.105" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="158.78067" y1="158.78067" id="connector63pin" gorn="0.1.110" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="165.97293" y1="165.97293" id="connector64pin" gorn="0.1.115" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="173.16519" y1="173.16519" id="connector65pin" gorn="0.1.120" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="180.35747" y1="180.35747" id="connector66pin" gorn="0.1.125" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="187.54976" y1="187.54976" id="connector67pin" gorn="0.1.130" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="194.74202" y1="194.74202" id="connector68pin" gorn="0.1.135" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="201.9343" y1="201.9343" id="connector69pin" gorn="0.1.140" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="209.12654" y1="209.12654" id="connector70pin" gorn="0.1.145" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="216.31885" y1="216.31885" id="connector71pin" gorn="0.1.150" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="223.51109" y1="223.51109" id="connector72pin" gorn="0.1.155" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="230.70337" y1="230.70337" id="connector73pin" gorn="0.1.160" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="237.89563" y1="237.89563" id="connector74pin" gorn="0.1.165" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="245.08789" y1="245.08789" id="connector75pin" gorn="0.1.170" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="252.28018" y1="252.28018" id="connector76pin" gorn="0.1.175" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="259.47244" y1="259.47244" id="connector77pin" gorn="0.1.180" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="266.6647" y1="266.6647" id="connector78pin" gorn="0.1.185" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="273.85699" y1="273.85699" id="connector79pin" gorn="0.1.190" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+  <line x1="10.04227" y2="281.04926" y1="281.04926" id="connector80pin" gorn="0.1.195" x2="22.337273" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.625288"/>
+ </g>
+</svg>

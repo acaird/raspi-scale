@@ -24,6 +24,17 @@
   (Drawn with the totally fun [[http://fritzing.org/home/][Fritzing]] and the [[https://github.com/adafruit/Fritzing-Library][Adafruit Fritzing
   Library]])
 
+  To load the files in the ~fritzing-files~ directory into Fritzing
+  directly, although you'll be prompted to convert it to a ~.fzz~
+  file, or you can make the ~.fzz~ file yourself from the files in
+  that directory by going into it and typing:
+  #+BEGIN_EXAMPLE
+     zip ../lamescale.fzz *
+  #+END_EXAMPLE
+  then opening the resulting ~lamescale.fzz~ file in Fritzing.  I keep
+  the files un-zipped in the git repository for version tracking, so
+  you can get whatever version you want from there.
+
 * The License
 
   I don't know what the license on Adafruit's script is, but mine follows that.  If there isn't a license
