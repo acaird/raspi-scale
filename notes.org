@@ -17,3 +17,30 @@
 
   - the correct thing is that it needed a pull-down resistor, as mentioned at
     https://learn.adafruit.com/force-sensitive-resistor-fsr/using-an-fsr
+
+* Mechanics
+
+  The mechanics of FSRs are tricky.  There are some web pages I had seen about
+  this.  It is hard to get constant firm pressure on them.  
+
+  One approach that seems to work is:
+
+  #+BEGIN_EXAMPLE:
+
+    coffee     |
+    container  |
+               |
+  -------------+
+           +--------+
+           |  penny |
+           +--------+
+      +-------+
+      |  fsr  +-------------- to breadboard
+      +-------+
+  #+END_EXAMPLE:
+
+  With that set up, 12oz of coffee changes the reading by between about 60 and
+  100, which is a pretty narrow range.  With some better balance, it changes by
+  about 200.
+
+  I think this has become a mechanical engineering problem.  
