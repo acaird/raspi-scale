@@ -5,13 +5,15 @@
 * Readings
 
   - the readings are all very high; I think it needs a resistor, maybe.
-    - nope, this was wrong
+    - nope, this was wrong, it just needed a pull-down resistor, not
+      the resistor I was thinking of
+  - now the readings are really nice
 
 * Wiring
 
   - I think the proper wiring is +3V to FSR_1 though FSR out FSR_2 to MCP3008
     pin 1, and this is where I think the resistor should go to ease up on the
-    range.  Or something.  (This is in addition to the wriring instructions at 
+    range.  Or something.  (This is in addition to the wriring instructions at
     [[https://learn.adafruit.com/reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi/connecting-the-cobbler-to-a-mcp3008][learn.adafruit]]
     - this was also wrong
 
@@ -21,7 +23,7 @@
 * Mechanics
 
   The mechanics of FSRs are tricky.  There are some web pages I had seen about
-  this.  It is hard to get constant firm pressure on them.  
+  this.  It is hard to get constant firm pressure on them.
 
   One approach that seems to work is:
 
@@ -43,4 +45,31 @@
   100, which is a pretty narrow range.  With some better balance, it changes by
   about 200.
 
-  I think this has become a mechanical engineering problem.  
+  I think this has become a mechanical engineering problem.
+
+  I'm also thinking of something like this:
+
+  #+BEGIN_SRC ditaa :file can-weight.png
+
+	    +------------------------------+
+	    |				   |
+	    |				   |
+	    |	Coffee Can or Bag          |
+	    |	       	       	       	   |
+	    |				   |
+    +-+	    |				   |
+    |G|	    |  	       	       	       	   |
+    |u|	    |                              |
+    |i|	    |  	    	 		   |
+    |d|	    |  		 		   |
+    |e|	    |{s}                           |
+    | |	    +------------------------------+
+    +-+--------------------------------------+
+    |  	 Platform			     |
+    +--------------------------------+-----+-+
+      /\       	       	       	     |     |
+     / 	\			     +-----+
+                       	       	    +-------+  to breadboard
+				    |  FSR  +-----------------
+				    +-------+
+  #+END_SRC
