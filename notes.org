@@ -49,7 +49,7 @@
 
   I'm also thinking of something like this:
 
-  #+BEGIN_SRC ditaa :file can-weight.png
+  #+BEGIN_SRC ditaa :file can-weight.png :cmdline --no-separation
             +------------------------------+
             |                              |
             |                              |
