@@ -39,7 +39,11 @@
       +-------+
       |  fsr  +-------------- to breadboard
       +-------+
-  #+END_EXAMPLE:
+  #+END_EXAMPLE
+
+  A photo of this set up is here:
+
+      [[file:images/wires.jpg]]
 
   With that set up, 12oz of coffee changes the reading by between about 60 and
   100, which is a pretty narrow range.  With some better balance, it changes by
