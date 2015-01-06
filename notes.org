@@ -76,3 +76,7 @@
                                     |  FSR  +-----------------
                                     +-------+
   #+END_SRC
+
+  or, represented in SketchUp:
+
+    [[file:images/coffee-scale.svg]]
