@@ -79,4 +79,4 @@
 
   or, represented in SketchUp:
 
-    [[file:images/coffee-scale.svg]]
+    [[file:images/coffee-scale-platform.svg]]
