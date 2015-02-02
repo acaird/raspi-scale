@@ -42,7 +42,7 @@ def sendEmail (smtpServer, gmailCreds, fAddr, tAddr, subj, body):
         s.login(creds[0], creds[1])
 
     mailResults = {} # so we can comment out the next line and things still work
-    # mailResults = s.sendmail(fAddr, [tAddr], msg.as_string())
+    mailResults = s.sendmail(fAddr, [tAddr], msg.as_string())
     s.quit()
     if (mailResults):
         return mailResults
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     except:
         print "=========================== ERROR ==========================="
         print "I couldn't open the file '{0}'".format(emailConfigFile)
-        print "to read the email settings, so I can't send email an"
+        print "to read the email settings, so I can't send email and"
         print "am giving up."
         print "(I am:", os.path.abspath(os.path.dirname(sys.argv[0]))+"/"+sys.argv[0],")"
         print "=========================== ERROR ==========================="
