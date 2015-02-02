@@ -1,0 +1,5 @@
+    smtpServer: localhost
+    smtpServer: smtp.gmail.com:587
+    gmailCreds: ./gmailCreds.sec
+    fromAddr:   acaird@gmail.com
+    toAddr:     acaird@gmail.com
