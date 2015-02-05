@@ -52,6 +52,10 @@ getMoarBeansNow: 300
 
 checkTime: 2
 
+# paths to credentials files
+
+plotlyCreds:  ./plotlyCreds.sec
+
 ---
 # The settings for sending email for notifications of being low on
 # beans; these are also, for the moment, in emailConfig.yaml, but it's

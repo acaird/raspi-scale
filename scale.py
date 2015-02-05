@@ -59,10 +59,9 @@ def readadc(adcnum, clockpin, mosipin, misopin, cspin):
 
 configFile = './scaleConfig.yaml'
 cfg = readConfig(configFile)
-plotlyConfigFile = './plotlyCreds.sec'
 
 try:
-        f = open(plotlyConfigFile)
+        f = open(cfg['raspberryPiConfig']['plotlyCreds'])
 except:
         print "=========================== ERROR ==========================="
         print "I couldn't open the file '{0}'".format(plotlyConfigFile)
@@ -133,7 +132,7 @@ while True:
                                                                                                     fsr,
                                                                                                     last_read,
                                                                                                     fsr_change)
-                        beans = int(fsr/1024)
+                        beans = int(fsr/1024.)*100.
                         updatePlot (datetime.datetime.now(),
                                     beans,
                                     plotlyConfig['username'],
