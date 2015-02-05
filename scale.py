@@ -4,6 +4,7 @@ import datetime
 import os
 import RPi.GPIO as GPIO
 import scaleConfig
+import scalePlotly
 import yaml
 '''
 This is mostly from:
@@ -134,9 +135,9 @@ while True:
                                                                                                     last_read,
                                                                                                     fsr_change)
                         beans = int(fsr/1024.)*100.
-                        updatePlot (datetime.datetime.now(),
-                                    beans,
-                                    plotlyConfig['username'],
-                                    plotlyConfig['apikey'])
+                        scalePlotly.updatePlot (datetime.datetime.now(),
+						beans,
+						plotlyConfig['username'],
+						plotlyConfig['apikey'])
 
         time.sleep(cfg['raspberryPiConfig']['checkTime'])
