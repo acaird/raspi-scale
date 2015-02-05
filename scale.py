@@ -72,10 +72,10 @@ SPIMISO   =    23
 SPIMOSI   =    24
 SPICS     =    25
 # -------------------
-SPICLK    =    cfg[0]['ADCtoCobbler']['SPICLK']
-SPIMISO   =    cfg[0]['ADCtoCobbler']['SPIMISO']
-SPIMOSI   =    cfg[0]['ADCtoCobbler']['SPIMOSI']
-SPICS     =    cfg[0]['ADCtoCobbler']['SPICS']
+SPICLK    =    cfg['raspberryPiConfig']['ADCtoCobbler']['SPICLK']
+SPIMISO   =    cfg['raspberryPiConfig']['ADCtoCobbler']['SPIMISO']
+SPIMOSI   =    cfg['raspberryPiConfig']['ADCtoCobbler']['SPIMOSI']
+SPICS     =    cfg['raspberryPiConfig']['ADCtoCobbler']['SPICS']
 # Diagram of ADC (MCP3008) is at:
 #   https://learn.adafruit.com/
 #     reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi/
@@ -88,16 +88,16 @@ GPIO.setup(SPICLK, GPIO.OUT)
 GPIO.setup(SPICS, GPIO.OUT)
 
 DEBUG = 1
-DEBUG = cfg[0]['debug']
+DEBUG = cfg['raspberryPiConfig']['debug']
 
 # FSR connected to adc #0
 fsr_adc = 0;
-fsr_adc = cfg[0]['adcPortWithFSR']
+fsr_adc = cfg['raspberryPiConfig']['adcPortWithFSR']
 
 last_read = 0       # this keeps track of the last FSR value
 tolerance = 4.5     # to keep from being jittery we'll only change
                     # when the FSR has moved more than this many 'counts'
-tolerance = cfg[0]['tolerance']
+tolerance = cfg['raspberryPiConfig']['tolerance']
 
 
 while True:
@@ -109,7 +109,7 @@ while True:
         # how much has it changed since the last read?
         fsr_change = (fsr - last_read)
 
-        if fsr_change > cfg[0]['maxChange']:
+        if fsr_change > cfg['raspberryPiConfig']['maxChange']:
                 if ( abs(fsr_change) > tolerance ):
                         fsr_changed = True
                         last_read = fsr
