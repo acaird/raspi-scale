@@ -27,9 +27,10 @@ adcPortWithFSR: 0
 
 # how much jitter should we tolerate?  The FSR is pretty chatty, so
 # setting something reasonable here will keep too many status updates
-# from happening
+# from happening; 9 is the about same as a 1% change, which seems
+# reasonable
 
-tolerance: 4.5
+tolerance: 16
 
 
 # this is about a 40% reduction from the 0--1024 range of the ADC's
