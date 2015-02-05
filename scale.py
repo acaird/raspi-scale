@@ -139,4 +139,4 @@ while True:
                                     plotlyConfig['username'],
                                     plotlyConfig['apikey'])
 
-        time.sleep(2)
+        time.sleep(cfg['raspberryPiConfig']['checkTime'])

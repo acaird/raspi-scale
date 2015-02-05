@@ -44,6 +44,14 @@ maxChange: -410
 
 getMoarBeansNow: 300
 
+
+# how many seconds to wait between checking the 'scale'; this can
+# probably be set at 300 (5 minutes) or 600 (10 minutes) or 1800 (30
+# minutes), but setting it at a very small number (like 2) is fun and
+# lets lots of updates happen so there is something to see as it runs
+
+checkTime: 2
+
 ---
 # The settings for sending email for notifications of being low on
 # beans; these are also, for the moment, in emailConfig.yaml, but it's
