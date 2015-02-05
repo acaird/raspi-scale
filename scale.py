@@ -1,11 +1,6 @@
 #!/usr/bin/env python
-import time
-import datetime
-import os
-import RPi.GPIO as GPIO
-import scaleConfig
-import scalePlotly
 import yaml
+import scaleConfig
 '''
 This is mostly from:
 https://learn.adafruit.com/
@@ -58,7 +53,6 @@ def readadc(adcnum, clockpin, mosipin, misopin, cspin):
         adcout >>= 1       # first bit is 'null' so drop it
         return adcout
 
-
 configFile = './scaleConfig.yaml'
 cfg = scaleConfig.readConfig(configFile)
 
@@ -75,6 +69,15 @@ except:
 
 plotlyConfig = yaml.safe_load(f)
 f.close()
+if cfg['raspberryPiConfig']['debug']:
+	print "Initializing."
+
+import time
+import datetime
+import os
+import RPi.GPIO as GPIO
+import scalePlotly
+
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False) # to stop the "This channel is already in use" warning
@@ -115,6 +118,8 @@ tolerance = 4.5     # to keep from being jittery we'll only change
                     # when the FSR has moved more than this many 'counts'
 tolerance = cfg['raspberryPiConfig']['tolerance']
 
+if cfg['raspberryPiConfig']['debug']:
+	print "Ready."
 
 while True:
         # we'll assume that the fsr reading didn't change
@@ -129,12 +134,13 @@ while True:
                 if ( abs(fsr_change) > tolerance ):
                         fsr_changed = True
                         last_read = fsr
+                        beans = int((fsr/1024.)*100)
                         if DEBUG:
-                                print '{0}\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}'.format(datetime.datetime.now(),
-                                                                                                    fsr,
-                                                                                                    last_read,
-                                                                                                    fsr_change)
-                        beans = int(fsr/1024.)*100.
+                                print '{0}\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}\tbeans: {4}'.format(datetime.datetime.now(),
+														fsr,
+														last_read,
+														fsr_change,
+														beans)
                         scalePlotly.updatePlot (datetime.datetime.now(),
 						beans,
 						plotlyConfig['username'],
