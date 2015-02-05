@@ -1,12 +1,13 @@
 import yaml
+import sys, os
 
 def readConfig (file):
 
     try:
-        f = open(configFile)
+        f = open(file)
     except:
         print "=========================== ERROR ==========================="
-        print "I couldn't open the file '{0}'".format(configFile)
+        print "I couldn't open the file '{0}'".format(file)
         print "to read the settings, so I'll have to think of"
         print "something else to do."
         print "(I am:", os.path.abspath(os.path.dirname(sys.argv[0]))+"/"+sys.argv[0],")"
