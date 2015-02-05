@@ -4,6 +4,7 @@ import datetime
 import os
 import RPi.GPIO as GPIO
 import scaleConfig
+import yaml
 '''
 This is mostly from:
 https://learn.adafruit.com/
@@ -58,7 +59,7 @@ def readadc(adcnum, clockpin, mosipin, misopin, cspin):
 
 
 configFile = './scaleConfig.yaml'
-cfg = readConfig(configFile)
+cfg = scaleConfig.readConfig(configFile)
 
 try:
         f = open(cfg['raspberryPiConfig']['plotlyCreds'])
