@@ -1,0 +1,79 @@
+# The settings for the RaspberryPi and its circuitry
+
+name: raspberryPiConfig
+
+# This defines the analog-to-digital converter connections to the
+# PiCobbler; the circuitry is documented at:
+# http://acaird.github.io/computers/2015/01/07/raspberry-pi-fsr/
+
+ADCtoCobbler:
+    SPICLK : 18
+    SPIMISO: 23
+    SPIMOSI: 24
+    SPICS  : 25
+
+
+# this will print things to the console; fun for watching, useful for
+# debugging, but not needed for everyday use
+
+debug: 1
+
+
+# Which port on the analog-to-digital converter is the force sensitive
+# resistor attached to?
+
+adcPortWithFSR: 0
+
+
+# how much jitter should we tolerate?  The FSR is pretty chatty, so
+# setting something reasonable here will keep too many status updates
+# from happening
+
+tolerance: 4.5
+
+
+# this is about a 40% reduction from the 0--1024 range of the ADC's
+# interpretation of the FSR; changes outside of this range are weird -
+# probably someone took all of the coffee beans off the scale and we
+# don't really want to report that
+
+maxChange: -410
+
+
+# What is the minimum FSR reading that will trigger notification?
+
+getMoarBeansNow: 300
+
+---
+# The settings for sending email for notifications of being low on
+# beans; these are also, for the moment, in emailConfig.yaml, but it's
+# nicer to have them in one file, I think.
+
+name: emailConfiguration
+
+
+# the SMTP server used to send email; if the SMTP server contains
+# 'gmail' then further information is read from the file specified in
+# 'gmailCreds' so the Python script can authenticate to Google to send
+# the message via Google's SMTP servers.  Listing more than one SMTP
+# server is convenient because the last one wins, but now we can
+# switch SMTP servers by adjusting the order of the 'smtpServer' lines
+
+smtpServer: localhost
+smtpServer: smtp.gmail.com:587
+
+
+# If the smtpServer contains the string 'gmail', we need a set of
+# GMail credentials in order to send the email via Google's SMTP
+# servers; those credentials are stored in the file referenced by
+# 'gmailCreds'
+
+gmailCreds: ./gmailCreds.sec
+
+
+# Set the to and from addresses for the email; the fromAddr doesn't
+# much matter, the toAddr determines who gets the warnings about a low
+# bean situation
+
+fromAddr:   acaird@gmail.com
+toAddr:     acaird@gmail.com
