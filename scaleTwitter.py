@@ -1,5 +1,5 @@
 import yaml
-import sys
+import sys, os
 
 def tweetStatus(aToken, aSecret, cToken, cSecret, tweet):
 
