@@ -86,11 +86,6 @@ GPIO.setwarnings(False) # to stop the "This channel is already in use" warning
 # SPI port on the ADC to the Cobbler
 # ADCPort    Cobbler
 # -------- ----------
-SPICLK    =    18
-SPIMISO   =    23
-SPIMOSI   =    24
-SPICS     =    25
-# -------------------
 SPICLK    =    cfg['raspberryPiConfig']['ADCtoCobbler']['SPICLK']
 SPIMISO   =    cfg['raspberryPiConfig']['ADCtoCobbler']['SPIMISO']
 SPIMOSI   =    cfg['raspberryPiConfig']['ADCtoCobbler']['SPIMOSI']
@@ -106,16 +101,16 @@ GPIO.setup(SPIMISO, GPIO.IN)
 GPIO.setup(SPICLK, GPIO.OUT)
 GPIO.setup(SPICS, GPIO.OUT)
 
-DEBUG = 1
 DEBUG = cfg['raspberryPiConfig']['debug']
 
 # FSR connected to adc #0
-fsr_adc = 0;
 fsr_adc = cfg['raspberryPiConfig']['adcPortWithFSR']
 
-last_read = 0       # this keeps track of the last FSR value
-tolerance = 4.5     # to keep from being jittery we'll only change
-                    # when the FSR has moved more than this many 'counts'
+# this keeps track of the last FSR value
+last_read = 0
+
+# to keep from being jittery we'll only change when the FSR has moved
+# more than this many 'counts'
 tolerance = cfg['raspberryPiConfig']['tolerance']
 
 if cfg['raspberryPiConfig']['debug']:
