@@ -13,7 +13,8 @@ def updatePlot (timeAndDate,beanPercent,username,apiKey):
     title = "Coffee Bean Inventory<br>as of "+str(datetime.datetime.today()).split()[0]
     layout = Layout ( title=title,
                       xaxis=XAxis(title=''),
-                      yaxis=YAxis(title='Bean Percentage')
+                      yaxis=YAxis(title='Bean Percentage',
+                                  range=[0,100])
                   )
 
     fig = Figure(data=data, layout=layout)
