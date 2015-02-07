@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import yaml
 import scaleConfig
+import argparse
+
 '''
 This is mostly from:
 https://learn.adafruit.com/
@@ -54,6 +56,19 @@ def readadc(adcnum, clockpin, mosipin, misopin, cspin):
         return adcout
 
 configFile = './scaleConfig.yaml'
+
+parser = argparse.ArgumentParser()
+parser.add_argument ("-d", "--debug", type=int, choices=[0,1], 
+		     nargs='?', const=1,
+		     help="turn debugging on (1) or off (0); this overrides"+
+		     "the value in the configuration file ")
+parser.add_argument("-c","--config", action="store", dest="configFile",
+		    help="specify a configuration file")
+args = parser.parse_args()
+
+if args.configFile:
+	configFile = args.configFile
+
 cfg = scaleConfig.readConfig(configFile)
 
 try:
@@ -69,7 +84,13 @@ except:
 
 plotlyConfig = yaml.safe_load(f)
 f.close()
-if cfg['raspberryPiConfig']['debug']:
+
+if args.debug == None:
+	DEBUG = cfg['raspberryPiConfig']['debug']
+else:
+	DEBUG = args.debug
+
+if DEBUG:
 	print "Initializing."
 
 import time
@@ -101,8 +122,6 @@ GPIO.setup(SPIMISO, GPIO.IN)
 GPIO.setup(SPICLK, GPIO.OUT)
 GPIO.setup(SPICS, GPIO.OUT)
 
-DEBUG = cfg['raspberryPiConfig']['debug']
-
 # FSR connected to adc #0
 fsr_adc = cfg['raspberryPiConfig']['adcPortWithFSR']
 
@@ -113,7 +132,7 @@ last_read = 0
 # more than this many 'counts'
 tolerance = cfg['raspberryPiConfig']['tolerance']
 
-if cfg['raspberryPiConfig']['debug']:
+if DEBUG:
 	print "Ready."
 
 while True:
