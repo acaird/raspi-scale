@@ -1,6 +1,33 @@
 import yaml
 import sys, os
 
+def setDefaults():
+
+    c = {'raspberryPiConfig':
+         {'ADCtoCobbler':{
+             'SPICLK':18,
+             'SPIMISO':23,
+             'SPIMOSI': 24,
+             'SPICS': 25
+             },
+          'debug':0,
+          'adcPortWithFSR':0,
+          'tolerance':16,
+          'maxChange':-410,
+          'getMoarBeansNow':300,
+          'checkTime': 2,
+          'plotlyCredsFile':'./plotlyCreds.sec'
+         },
+         'emailConfiguration':
+         {'smtpServer':'localhost',
+          'gmailCredsFile':'',
+          'fromAddr':'',
+          'toAddr':''
+         }
+     }
+
+    return (c)
+
 def readConfig (file):
 
     try:
@@ -23,7 +50,8 @@ def readConfig (file):
     # something, because it makes the order of the YAML file matter,
     # and that's no good
 
-    config = {}
+    config = setDefaults()
+    pp.pprint (config)
     for doc in configDocs:
         config[doc['name']] = doc
 

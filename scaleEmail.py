@@ -73,7 +73,7 @@ This is the test of my email message.  It is pretty boring, but
 it is a few lines of text that will help me to see what different clients
 do with this formatting.'''
 
-    results = sendEmail (emailConfig['smtpServer'], emailConfig['gmailCreds'],
+    results = sendEmail (emailConfig['smtpServer'], emailConfig['gmailCredsFile'],
                          emailConfig['fromAddr'],   emailConfig['toAddr'],
                          subject, body)
     if (results):

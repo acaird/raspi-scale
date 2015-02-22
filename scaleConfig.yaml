@@ -55,7 +55,7 @@ checkTime: 2
 
 # paths to credentials files
 
-plotlyCreds:  ./plotlyCreds.sec
+plotlyCredsFile:  ./plotlyCreds.sec
 
 ---
 # The settings for sending email for notifications of being low on
@@ -67,7 +67,7 @@ name: emailConfiguration
 
 # the SMTP server used to send email; if the SMTP server contains
 # 'gmail' then further information is read from the file specified in
-# 'gmailCreds' so the Python script can authenticate to Google to send
+# 'gmailCredsFile' so the Python script can authenticate to Google to send
 # the message via Google's SMTP servers.  Listing more than one SMTP
 # server is convenient because the last one wins, but now we can
 # switch SMTP servers by adjusting the order of the 'smtpServer' lines
@@ -79,9 +79,9 @@ smtpServer: smtp.gmail.com:587
 # If the smtpServer contains the string 'gmail', we need a set of
 # GMail credentials in order to send the email via Google's SMTP
 # servers; those credentials are stored in the file referenced by
-# 'gmailCreds'
+# 'gmailCredsFile'
 
-gmailCreds: ./gmailCreds.sec
+gmailCredsFile: ./gmailCreds.sec
 
 
 # Set the to and from addresses for the email; the fromAddr doesn't
