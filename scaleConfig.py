@@ -23,7 +23,9 @@ def setDefaults():
           'gmailCredsFile':'',
           'fromAddr':'',
           'toAddr':''
-         }
+         },
+         'twitterConfiguration':
+         {'twitterCredsFile':'./twitterCreds.sec'}
      }
 
     return (c)

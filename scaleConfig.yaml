@@ -90,3 +90,11 @@ gmailCredsFile: ./gmailCreds.sec
 
 fromAddr:   acaird@gmail.com
 toAddr:     acaird@gmail.com
+
+---
+# The settings for sending Twitter notifications of being low on
+# beans
+
+name: twitterConfiguration
+
+twitterCredsFile: ./twitterCreds.sec
