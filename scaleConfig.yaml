@@ -97,4 +97,14 @@ toAddr:     acaird@gmail.com
 
 name: twitterConfiguration
 
+# This file is formatted like:
+#
+#    consumerKey:  vvmHoFoEpghTNe2lXd7xuDtHt
+#    consumerSec:  8nbYc3UvLwKGYfPOU6DMMaNvFmmVI3JU4kn0mO0PwwEtuyMfKC
+#    accessToken:  3013528785-s5qtZeIOMz2yFbUAxxn8wVtJmKhJrVYjUUkkL5k
+#    accessSecret: VMbQlr5Rk2fOqmQGlCSK5IHSiuZ3b03fjMgprUjj9a6WL
+#
+# and that information is from Twitter's API page, and no, those
+# aren't working values.
+
 twitterCredsFile: ./twitterCreds.sec
