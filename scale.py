@@ -58,7 +58,7 @@ def readadc(adcnum, clockpin, mosipin, misopin, cspin):
 configFile = './scaleConfig.yaml'
 
 parser = argparse.ArgumentParser()
-parser.add_argument ("-d", "--debug", type=int, choices=[0,1], 
+parser.add_argument ("-d", "--debug", type=int, choices=[0,1],
 		     nargs='?', const=1,
 		     help="turn debugging on (1) or off (0); this overrides"+
 		     "the value in the configuration file ")
@@ -136,8 +136,6 @@ if DEBUG:
 	print "Ready."
 
 while True:
-        # we'll assume that the fsr reading didn't change
-        fsr_changed = False
 
         # read the analog pin
         fsr = readadc(fsr_adc, SPICLK, SPIMOSI, SPIMISO, SPICS)
@@ -146,7 +144,6 @@ while True:
 
         if fsr_change > cfg['raspberryPiConfig']['maxChange']:
                 if ( abs(fsr_change) > tolerance ):
-                        fsr_changed = True
                         last_read = fsr
                         beans = int((fsr/1024.)*100)
                         if DEBUG:
