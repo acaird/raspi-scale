@@ -73,10 +73,10 @@ if args.configFile:
 cfg = scaleConfig.readConfig(configFile)
 
 try:
-        f = open(cfg['raspberryPiConfig']['plotlyCreds'])
+        f = open(cfg['raspberryPiConfig']['plotlyCredsFile'])
 except:
         print "=========================== ERROR ==========================="
-        print "I couldn't open the file '{0}'".format(plotlyConfigFile)
+        print "I couldn't open the file '{0}'".format(cfg['raspberryPiConfig']['plotlyCredsFile'])
         print "to read the plot.ly settings, so I can't make a plot and"
         print "am giving up."
         print "(I am:", os.path.abspath(os.path.dirname(sys.argv[0]))+"/"+sys.argv[0],")"
@@ -137,20 +137,23 @@ tolerance = cfg['raspberryPiConfig']['tolerance']
 # If we will need Twitter credentials, read them now
 #
 if 'twitter' in cfg['raspberryPiConfig']['alertChannels'] or 'twitter' in cfg['raspberryPiConfig']['updateChannels']:
+	if DEBUG:
+		print "Reading Twitter credentials from ",cfg['twitterConfiguration']['twitterCredsFile']
+
         try:
-                f = open(cfg['raspberryPiConfig']['twitterCredsFile'])
+                f = open(cfg['twitterConfiguration']['twitterCredsFile'])
                 twitterCredentials = yaml.safe_load(f)
                 f.close()
         except:
                 if DEBUG:
                         print "=========================== ERROR ==========================="
-                        print "I couldn't open the file '{0}'".format(emailConfigFile)
+                        print "I couldn't open the file '{0}'".format(cfg['twitterConfiguration']['twitterCredsFile'])
                         print "to read the twitter credentials, so I can't tweet."
                         print "(I am:", os.path.abspath(os.path.dirname(sys.argv[0]))+"/"+sys.argv[0],")"
                         print "=========================== ERROR ==========================="
 
-                cfg['raspberryPiConfig']['alertChannels'].remove('twitter')
-                cfg['raspberryPiConfig']['updateChannels'].remove('twitter')
+			cfg['raspberryPiConfig']['alertChannels'].remove('twitter')
+			cfg['raspberryPiConfig']['updateChannels'].remove('twitter')
 
 if DEBUG:
 	print "Ready."
@@ -163,7 +166,7 @@ while cfg['raspberryPiConfig']['updateTime'] % cfg['raspberryPiConfig']['checkTi
 if oTime != cfg['raspberryPiConfig']['updateTime'] and DEBUG:
         print "\"updateTime\" changed to ",
         cfg['raspberryPiConfig']['updateTime'],
-        "so it would divide evenly by \"checkTime\"".
+        "so it would divide evenly by \"checkTime\"."
 
 scaleClock = 0
 

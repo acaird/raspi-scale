@@ -56,7 +56,7 @@ def readConfig (file):
     # and that's no good
 
     config = setDefaults()
-    pp.pprint (config)
+
     for doc in configDocs:
         config[doc['name']] = doc
 
