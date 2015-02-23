@@ -76,3 +76,8 @@ if __name__ == "__main__":
     print "And everything else is:"
 
     pp.pprint(cfg)
+
+    if 'plotly' in cfg['raspberryPiConfig']['alertChannels']:
+        print "Alert: Plot.ly"
+    else:
+        print "Alert: no Plot.ly"
