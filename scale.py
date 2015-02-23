@@ -199,7 +199,7 @@ while True:
                                         plotlyConfig['username'],
                                         plotlyConfig['apikey'])
 
-        if scaleClock == cfg['raspberryPiConfig']['updateTime']:
+        if scaleClock % cfg['raspberryPiConfig']['updateTime'] == 0:
                 if DEBUG:
                         print '{0} UPDATE\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}\tbeans: {4}'.format(datetime.datetime.now(),
 													       fsr,
