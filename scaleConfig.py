@@ -15,8 +15,11 @@ def setDefaults():
           'tolerance':16,
           'maxChange':-410,
           'getMoarBeansNow':300,
+          'alertChannels':['twitter', 'email'],
           'checkTime': 2,
-          'plotlyCredsFile':'./plotlyCreds.sec'
+          'plotlyCredsFile':'./plotlyCreds.sec',
+          'updateTime:': 86400,
+          'updateChannels':['twitter', 'plotly']
          },
          'emailConfiguration':
          {'smtpServer':'localhost',

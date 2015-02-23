@@ -135,6 +135,17 @@ tolerance = cfg['raspberryPiConfig']['tolerance']
 if DEBUG:
 	print "Ready."
 
+
+oTime = cfg['raspberryPiConfig']['updateTime']
+
+while cfg['raspberryPiConfig']['updateTime'] % cfg['raspberryPiConfig']['checkTime']:
+        cfg['raspberryPiConfig']['updateTime'] += 1
+
+if oTime != cfg['raspberryPiConfig']['updateTime'] and DEBUG:
+        print "\"updateTime\" changed to ",
+        cfg['raspberryPiConfig']['updateTime'],
+        "so it would divide evenly by \"checkTime\"".
+
 while True:
 
         # read the analog pin

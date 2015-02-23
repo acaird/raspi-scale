@@ -45,6 +45,13 @@ maxChange: -410
 
 getMoarBeansNow: 300
 
+# Low bean alerts should be sent on the following channels; these are
+# limited to 'plotly', 'twitter', and 'email' in this version
+
+alertChannels:
+  - twitter
+  - email
+
 
 # how many seconds to wait between checking the 'scale'; this can
 # probably be set at 300 (5 minutes) or 600 (10 minutes) or 1800 (30
@@ -56,6 +63,22 @@ checkTime: 2
 # paths to credentials files
 
 plotlyCredsFile:  ./plotlyCreds.sec
+
+# Regardless of changes in the weight of the beans, update things (see
+# the next block) on this frequency (in seconds); note that this is
+# the number of seconds after scale.py was started; so if you start it
+# at 9:30am one day, and set this to 86400, an update will take place
+# every day at 9:30am until scale.py stops
+
+updateTime: 86400
+
+# The periodic updates (described above) should be sent on the
+# following channels; these are limited to 'plotly', 'twitter', and
+# 'email' in this version
+
+updateChannels:
+  - plotly
+  - twitter
 
 ---
 # The settings for sending email for notifications of being low on
