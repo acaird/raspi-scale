@@ -94,6 +94,12 @@ else:
 if DEBUG:
 	print "Initializing."
 
+if not cfg['raspberryPiConfig']['alertChannels']:
+	cfg['raspberryPiConfig']['alertChannels'] = ''
+if not cfg['raspberryPiConfig']['updateChannels']:
+	cfg['raspberryPiConfig']['updateChannels'] = ''
+
+
 import time
 import datetime
 import os
@@ -183,17 +189,23 @@ while True:
                 last_read = fsr
                 beans = int((fsr/1024.)*100)
                 if DEBUG:
-                        print '{0}\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}\tbeans: {4}'.format(datetime.datetime.now(),
-                                                                                                        fsr,
-                                                                                                        last_read,
-                                                                                                        fsr_change,
-                                                                                                        beans)
+                        print '{0} CHANGE\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}\tbeans: {4}'.format(datetime.datetime.now(),
+													       fsr,
+													       last_read,
+													       fsr_change,
+													       beans)
                 scalePlotly.updatePlot (datetime.datetime.now(),
                                         beans,
                                         plotlyConfig['username'],
                                         plotlyConfig['apikey'])
 
         if scaleClock == cfg['raspberryPiConfig']['updateTime']:
+                if DEBUG:
+                        print '{0} UPDATE\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}\tbeans: {4}'.format(datetime.datetime.now(),
+													       fsr,
+													       last_read,
+													       fsr_change,
+													       beans)
                 if 'plotly' in cfg['raspberryPiConfig']['updateChannels']:
                         scalePlotly.updatePlot (datetime.datetime.now(),
                                                 beans,
