@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import yaml
 import scaleConfig
+import scaleTwitter
 import argparse
 
 '''
@@ -132,9 +133,27 @@ last_read = 0
 # more than this many 'counts'
 tolerance = cfg['raspberryPiConfig']['tolerance']
 
+#
+# If we will need Twitter credentials, read them now
+#
+if 'twitter' in cfg['raspberryPiConfig']['alertChannels'] or 'twitter' in cfg['raspberryPiConfig']['updateChannels']:
+        try:
+                f = open(cfg['raspberryPiConfig']['twitterCredsFile'])
+                twitterCredentials = yaml.safe_load(f)
+                f.close()
+        except:
+                if DEBUG:
+                        print "=========================== ERROR ==========================="
+                        print "I couldn't open the file '{0}'".format(emailConfigFile)
+                        print "to read the twitter credentials, so I can't tweet."
+                        print "(I am:", os.path.abspath(os.path.dirname(sys.argv[0]))+"/"+sys.argv[0],")"
+                        print "=========================== ERROR ==========================="
+
+                cfg['raspberryPiConfig']['alertChannels'].remove('twitter')
+                cfg['raspberryPiConfig']['updateChannels'].remove('twitter')
+
 if DEBUG:
 	print "Ready."
-
 
 oTime = cfg['raspberryPiConfig']['updateTime']
 
@@ -146,12 +165,16 @@ if oTime != cfg['raspberryPiConfig']['updateTime'] and DEBUG:
         cfg['raspberryPiConfig']['updateTime'],
         "so it would divide evenly by \"checkTime\"".
 
+scaleClock = 0
+
 while True:
 
         # read the analog pin
         fsr = readadc(fsr_adc, SPICLK, SPIMOSI, SPIMISO, SPICS)
         # how much has it changed since the last read?
         fsr_change = (fsr - last_read)
+
+        scaleClock += cfg['raspberryPiConfig']['checkTime']
 
         if fsr_change > cfg['raspberryPiConfig']['maxChange'] and ( abs(fsr_change) > tolerance ):
                 last_read = fsr
@@ -166,5 +189,19 @@ while True:
                                         beans,
                                         plotlyConfig['username'],
                                         plotlyConfig['apikey'])
+
+        if scaleClock == cfg['raspberryPiConfig']['updateTime']:
+                if 'plotly' in cfg['raspberryPiConfig']['updateChannels']:
+                        scalePlotly.updatePlot (datetime.datetime.now(),
+                                                beans,
+                                                plotlyConfig['username'],
+                                                plotlyConfig['apikey'])
+                if 'twitter' in cfg['raspberryPiConfig']['updateChannels']:
+                        scaleTwitter.tweetStatus(twitterCredentials['accessToken'],
+                                                 twitterCredentials['accessSecret'],
+                                                 twitterCredentials['consumerKey'],
+                                                 twitterCredentials['consumerSec'],
+                                                 "The current bean inventory is {}. #caen #beanbot #coffebeans".format(beans))
+
 
         time.sleep(cfg['raspberryPiConfig']['checkTime'])
