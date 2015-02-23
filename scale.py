@@ -142,19 +142,18 @@ while True:
         # how much has it changed since the last read?
         fsr_change = (fsr - last_read)
 
-        if fsr_change > cfg['raspberryPiConfig']['maxChange']:
-                if ( abs(fsr_change) > tolerance ):
-                        last_read = fsr
-                        beans = int((fsr/1024.)*100)
-                        if DEBUG:
-                                print '{0}\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}\tbeans: {4}'.format(datetime.datetime.now(),
-														fsr,
-														last_read,
-														fsr_change,
-														beans)
-                        scalePlotly.updatePlot (datetime.datetime.now(),
-						beans,
-						plotlyConfig['username'],
-						plotlyConfig['apikey'])
+        if fsr_change > cfg['raspberryPiConfig']['maxChange'] and ( abs(fsr_change) > tolerance ):
+                last_read = fsr
+                beans = int((fsr/1024.)*100)
+                if DEBUG:
+                        print '{0}\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}\tbeans: {4}'.format(datetime.datetime.now(),
+                                                                                                        fsr,
+                                                                                                        last_read,
+                                                                                                        fsr_change,
+                                                                                                        beans)
+                scalePlotly.updatePlot (datetime.datetime.now(),
+                                        beans,
+                                        plotlyConfig['username'],
+                                        plotlyConfig['apikey'])
 
         time.sleep(cfg['raspberryPiConfig']['checkTime'])
