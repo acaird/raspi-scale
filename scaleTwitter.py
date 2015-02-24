@@ -1,6 +1,8 @@
 import yaml
 import sys, os
 
+# pip install python-twitter, not pip install twitter
+
 def tweetStatus(aToken, aSecret, cToken, cSecret, tweet):
 
     if (len(tweet)>140):
