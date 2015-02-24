@@ -185,11 +185,13 @@ while True:
 
         scaleClock += cfg['raspberryPiConfig']['checkTime']
 
+	currentTime = datetime.datetime.now()
+
         if fsr_change > cfg['raspberryPiConfig']['maxChange'] and ( abs(fsr_change) > tolerance ):
                 last_read = fsr
                 beans = int((fsr/1024.)*100)
                 if DEBUG:
-                        print '{0} CHANGE\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}\tbeans: {4}'.format(datetime.datetime.now(),
+                        print '{0} CHANGE\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}\tbeans: {4}'.format(currentTime,
 													       fsr,
 													       last_read,
 													       fsr_change,
@@ -201,7 +203,7 @@ while True:
 
         if scaleClock % cfg['raspberryPiConfig']['updateTime'] == 0:
                 if DEBUG:
-                        print '{0} UPDATE\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}\tbeans: {4}'.format(datetime.datetime.now(),
+                        print '{0} UPDATE\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}\tbeans: {4}'.format(currentTime,
 													       fsr,
 													       last_read,
 													       fsr_change,
@@ -216,7 +218,7 @@ while True:
                                                  twitterCredentials['accessSecret'],
                                                  twitterCredentials['consumerKey'],
                                                  twitterCredentials['consumerSec'],
-                                                 "The current bean inventory is {}. #caen #beanbot #coffebeans".format(beans))
+                                                 "The bean inventory is {1} at {2}. #caen #beanbot #coffebeans".format(beans,currentTime))
 
 
         time.sleep(cfg['raspberryPiConfig']['checkTime'])
