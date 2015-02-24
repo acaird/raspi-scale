@@ -161,9 +161,6 @@ if 'twitter' in cfg['raspberryPiConfig']['alertChannels'] or 'twitter' in cfg['r
 			cfg['raspberryPiConfig']['alertChannels'].remove('twitter')
 			cfg['raspberryPiConfig']['updateChannels'].remove('twitter')
 
-if DEBUG:
-	print "Ready."
-
 oTime = cfg['raspberryPiConfig']['updateTime']
 
 while cfg['raspberryPiConfig']['updateTime'] % cfg['raspberryPiConfig']['checkTime']:
@@ -173,6 +170,9 @@ if oTime != cfg['raspberryPiConfig']['updateTime'] and DEBUG:
         print "\"updateTime\" changed from {0} to {1} so it would divide evenly by \"checkTime\".".format(oTime, cfg['raspberryPiConfig']['updateTime'])
 
 scaleClock = 0
+
+if DEBUG:
+	print "Ready."
 
 while True:
 
