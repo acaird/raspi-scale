@@ -130,3 +130,23 @@ name: twitterConfiguration
 # aren't working values.
 
 twitterCredsFile: ./twitterCreds.sec
+
+# The twitter message can be anything; {0} is the percentage of beans,
+# {1} is the current date and time.  You don't have to use either of
+# those, but note that Twitter will check for duplicate messages, so
+# tweeting the same thing will result in an error from Twitter; adding
+# the date/time stamp gets around that
+
+twitterUpdateMessage: "The bean inventory is {0}% at {1}."
+twitterUpdateHashtags:
+  - caen
+  - beanbot
+  - coffebeans
+
+twitterAlertMessage: "OH NOES! The bean inventory dangerously low! ({0}% at {1})"
+twitterAlertHashtags:
+  - caen
+  - beanbot
+  - coffebeans
+  - buymoarcoffeebeans
+  - coffeeemergency
