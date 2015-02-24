@@ -194,7 +194,7 @@ while True:
                         print logString.format(currentTime, "CHANGE",
                                                fsr, last_read,
                                                fsr_change, beans)
-                scalePlotly.updatePlot (datetime.datetime.now(),
+                scalePlotly.updatePlot (currentTime,
                                         beans,
                                         plotlyConfig['username'],
                                         plotlyConfig['apikey'])
@@ -207,7 +207,7 @@ while True:
                                                fsr, last_read,
                                                fsr_change, beans)
                 if 'plotly' in cfg['raspberryPiConfig']['updateChannels']:
-                        scalePlotly.updatePlot (datetime.datetime.now(),
+                        scalePlotly.updatePlot (currentTime,
                                                 beans,
                                                 plotlyConfig['username'],
                                                 plotlyConfig['apikey'])
