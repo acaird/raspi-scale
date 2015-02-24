@@ -139,6 +139,10 @@ last_read = 0
 # more than this many 'counts'
 tolerance = cfg['raspberryPiConfig']['tolerance']
 
+# not ideal, but at least it's just in one place now
+logString = '{0} {1}\tfsr: {2:4d}\tlast_value: {3:4d}\tchange: {4:4d}\tbeans: {5}'
+
+
 #
 # If we will need Twitter credentials, read them now
 #
@@ -187,11 +191,9 @@ while True:
                 last_read = fsr
                 beans = int((fsr/1024.)*100)
                 if DEBUG:
-                        print '{0} CHANGE\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}\tbeans: {4}'.format(currentTime,
-													       fsr,
-													       last_read,
-													       fsr_change,
-													       beans)
+                        print logString.format(currentTime, "CHANGE",
+                                               fsr, last_read,
+                                               fsr_change, beans)
                 scalePlotly.updatePlot (datetime.datetime.now(),
                                         beans,
                                         plotlyConfig['username'],
@@ -201,11 +203,9 @@ while True:
                 last_read = fsr
                 beans = int((fsr/1024.)*100)
                 if DEBUG:
-                        print '{0} UPDATE\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}\tbeans: {4}'.format(currentTime,
-													       fsr,
-													       last_read,
-													       fsr_change,
-													       beans)
+                        print logString.format(currentTime, "UPDATE",
+                                               fsr, last_read,
+                                               fsr_change, beans)
                 if 'plotly' in cfg['raspberryPiConfig']['updateChannels']:
                         scalePlotly.updatePlot (datetime.datetime.now(),
                                                 beans,
