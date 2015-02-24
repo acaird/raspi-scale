@@ -28,7 +28,13 @@ def setDefaults():
           'toAddr':''
          },
          'twitterConfiguration':
-         {'twitterCredsFile':'./twitterCreds.sec'}
+         {'twitterCredsFile': './twitterCreds.sec',
+          'twitterAlertHashtags': ['caen', 'beanbot', 'coffebeans',
+                                   'buymoarcoffeebeans', 'coffeeemergency'],
+          'twitterAlertMessage': 'OH NOES! The bean inventory dangerously low! ({0}% at {1})',
+          'twitterUpdateHashtags': ['caen', 'beanbot', 'coffebeans'],
+          'twitterUpdateMessage': 'The bean inventory is {0}% at {1}.'
+      }
      }
 
     return (c)
