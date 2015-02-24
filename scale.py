@@ -199,6 +199,7 @@ while True:
 
         if scaleClock % cfg['raspberryPiConfig']['updateTime'] == 0:
                 last_read = fsr
+                beans = int((fsr/1024.)*100)
                 if DEBUG:
                         print '{0} UPDATE\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}\tbeans: {4}'.format(currentTime,
 													       fsr,
