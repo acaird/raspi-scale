@@ -170,9 +170,7 @@ while cfg['raspberryPiConfig']['updateTime'] % cfg['raspberryPiConfig']['checkTi
         cfg['raspberryPiConfig']['updateTime'] += 1
 
 if oTime != cfg['raspberryPiConfig']['updateTime'] and DEBUG:
-        print "\"updateTime\" changed to ",
-        cfg['raspberryPiConfig']['updateTime'],
-        "so it would divide evenly by \"checkTime\"."
+        print "\"updateTime\" changed from {0} to {1} so it would divide evenly by \"checkTime\".".format(oTime, cfg['raspberryPiConfig']['updateTime'])
 
 scaleClock = 0
 
@@ -213,7 +211,7 @@ while True:
                                                 plotlyConfig['username'],
                                                 plotlyConfig['apikey'])
                 if 'twitter' in cfg['raspberryPiConfig']['updateChannels']:
-			tweet = "The bean inventory is {0} at {1}. #caen #beanbot #coffebeans".format(beans,currentTime)
+			tweet = "The bean inventory is {0}% at {1}. #caen #beanbot #coffebeans".format(beans,currentTime)
 
                         scaleTwitter.tweetStatus(twitterCredentials['accessToken'],
                                                  twitterCredentials['accessSecret'],
