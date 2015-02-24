@@ -183,9 +183,7 @@ while True:
         # how much has it changed since the last read?
         fsr_change = (fsr - last_read)
 
-        scaleClock += cfg['raspberryPiConfig']['checkTime']
-
-	currentTime = datetime.datetime.now()
+	currentTime = str(datetime.datetime.now()).split('.')[0]
 
         if fsr_change > cfg['raspberryPiConfig']['maxChange'] and ( abs(fsr_change) > tolerance ):
                 last_read = fsr
@@ -202,6 +200,7 @@ while True:
                                         plotlyConfig['apikey'])
 
         if scaleClock % cfg['raspberryPiConfig']['updateTime'] == 0:
+                last_read = fsr
                 if DEBUG:
                         print '{0} UPDATE\tfsr: {1:4d}\tlast_value: {2:4d}\tchange: {3:4d}\tbeans: {4}'.format(currentTime,
 													       fsr,
@@ -214,11 +213,15 @@ while True:
                                                 plotlyConfig['username'],
                                                 plotlyConfig['apikey'])
                 if 'twitter' in cfg['raspberryPiConfig']['updateChannels']:
+			tweet = "The bean inventory is {0} at {1}. #caen #beanbot #coffebeans".format(beans,currentTime)
+
                         scaleTwitter.tweetStatus(twitterCredentials['accessToken'],
                                                  twitterCredentials['accessSecret'],
                                                  twitterCredentials['consumerKey'],
                                                  twitterCredentials['consumerSec'],
-                                                 "The bean inventory is {1} at {2}. #caen #beanbot #coffebeans".format(beans,currentTime))
+                                                 tweet)
 
+
+        scaleClock += cfg['raspberryPiConfig']['checkTime']
 
         time.sleep(cfg['raspberryPiConfig']['checkTime'])
