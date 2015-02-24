@@ -211,7 +211,9 @@ while True:
                                                 plotlyConfig['username'],
                                                 plotlyConfig['apikey'])
                 if 'twitter' in cfg['raspberryPiConfig']['updateChannels']:
-			tweet = "The bean inventory is {0}% at {1}. #caen #beanbot #coffebeans".format(beans,currentTime)
+                        hashTags=" ".join(["#"+m for m in cfg['twitterConfiguration']['twitterUpdateHashtags']])
+                        tweet   = cfg['twitterConfiguration']['twitterUpdateMessage']+" "+ hashTags
+			tweet = tweet.format(beans,currentTime)
 
                         scaleTwitter.tweetStatus(twitterCredentials['accessToken'],
                                                  twitterCredentials['accessSecret'],
