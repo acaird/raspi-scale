@@ -25,7 +25,9 @@ def setDefaults():
          {'smtpServer':'localhost',
           'gmailCredsFile':'',
           'fromAddr':'',
-          'toAddr':''
+          'toAddr':'',
+          'emailAlertMessage': 'This is your friendly BeanBot letting you know that it looks like you are low on beans.\nAccording to the bean weight sensor, you have {0}% of beans left.\nToday is {1} and I hope you have time to get more beans soon.\nHappy coffeeing!',
+          'emailAlertSubject': 'Low Bean Alert!',
          },
          'twitterConfiguration':
          {'twitterCredsFile': './twitterCreds.sec',

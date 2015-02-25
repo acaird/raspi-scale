@@ -113,6 +113,25 @@ gmailCredsFile: ./gmailCreds.sec
 fromAddr:   acaird@gmail.com
 toAddr:     acaird@gmail.com
 
+
+# This is the email subject and message that will be used for low bean
+# alerts.  The subject is a simple text string.  The message body can
+# have multiple lines and it has two interpreted variables: {0} is the
+# sensor percentage value; {1} is the current date.  You don't have to
+# include either one of those in your message.  If you do include them
+# they don't have to be in order, but you can't include {1} without
+# including {0}.
+emailAlertSubject: Low Bean Alert!
+emailAlertMessage: >-
+  This is your friendly BeanBot letting you know that it looks like
+  you are low on beans.
+
+  According to the bean weight sensor, you have {0}% of beans left.
+
+  Today is {1} and I hope you have time to get more beans soon.
+
+  Happy coffeeing!
+
 ---
 # The settings for sending Twitter notifications of being low on
 # beans
