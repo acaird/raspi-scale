@@ -60,7 +60,7 @@ if __name__ == "__main__":
     else:
 	DEBUG = args.debug
 
-    alertState = shelve.open("scaleState", writeback=True)
+    alertState = shelve.open("scaleState.db", writeback=True)
 
     for alert in cfg['raspberryPiConfig']['alertChannels']:
         if alert not in alertState:

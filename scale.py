@@ -182,7 +182,7 @@ scaleClock = 0
 # are keeping the state of the alerts we have generated, so we don't
 # re-send emails or tweets if one has already been sent for a given
 # state
-alertState = shelve.open("scaleState", writeback=True)
+alertState = shelve.open("scaleState.db", writeback=True)
 for alert in cfg['raspberryPiConfig']['alertChannels']:
         if alert not in alertState:
                 alertState[alert] = 0
