@@ -69,4 +69,4 @@ if __name__ == "__main__":
 
     currentTime = str(datetime.datetime.now()).split('.')[0]
 
-    processAlerts (fsr, alertState, cfg, currentTime)
+    processLowBeanAlerts (fsr, alertState, cfg, currentTime)
