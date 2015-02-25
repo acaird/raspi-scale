@@ -4,15 +4,13 @@ def processLowBeanAlerts (fsr, alertState, cfg, currentTime):
     # set the alertStates to 1 (alerted) and do the necessary
     # alerts if we seem to have too few beans
     if fsr < cfg['raspberryPiConfig']['getMoarBeansNow']:
-        if DEBUG:
-            print "{0} uh oh, not enough beans".format(currentTime)
         for alert in alertState:
             if alertState[alert] == 0:
                 # this is where we would do the actual
                 # alerts
                 alertState[alert] = 1
                 if DEBUG:
-                    print "{0} Doing alert {1}".format(currentTime, alert)
+                    print "{0} Doing low bean alert {1}".format(currentTime, alert)
                 alertState.sync()
 
     # reset all of the alert channel states to 0 if we are 10%
