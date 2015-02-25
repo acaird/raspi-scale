@@ -5,7 +5,7 @@ def processAlerts (fsr, alertState, cfg, currentTime):
     # alerts if we seem to have too few beans
     if fsr < cfg['raspberryPiConfig']['getMoarBeansNow']:
         if DEBUG:
-            print "uh oh, not enough beans"
+            print "{0} uh oh, not enough beans".format(currentTime)
         for alert in alertState:
             if alertState[alert] == 0:
                 # this is where we would do the actual
