@@ -50,7 +50,7 @@ getMoarBeansNow: 300
 
 alertChannels:
   - twitter
-#  - email
+  - email
 
 # how many seconds to wait between checking the 'scale'; this can
 # probably be set at 300 (5 minutes) or 600 (10 minutes) or 1800 (30
@@ -128,7 +128,7 @@ emailAlertMessage: >-
 
   According to the bean weight sensor, you have {0}% of beans left.
 
-  Today is {1} and I hope you have time to get more beans soon.
+  It is {1} and I hope you have time to get more beans soon.
 
   Happy coffeeing!
 
@@ -154,7 +154,10 @@ twitterCredsFile: ./twitterCreds.sec
 # {1} is the current date and time.  You don't have to use either of
 # those, but note that Twitter will check for duplicate messages, so
 # tweeting the same thing will result in an error from Twitter; adding
-# the date/time stamp gets around that
+# the date/time stamp gets around that.  Also, the combination of the
+# Message and the Hashtags can't be more than 140 characters long or
+# it won't be sent, so use with caution.  The date string is always 20
+# characters long.
 
 twitterUpdateMessage: "The bean inventory is {0}% at {1}."
 twitterUpdateHashtags:
