@@ -1,17 +1,31 @@
 
 def processLowBeanAlerts (fsr, alertState, cfg, currentTime):
 
+    beans = int((fsr/1024.)*100)
+
     # set the alertStates to 1 (alerted) and do the necessary
     # alerts if we seem to have too few beans
     if fsr < cfg['raspberryPiConfig']['getMoarBeansNow']:
-        for alert in alertState:
+        for alert in cfg['raspberryPiConfig']['alertChannels']:
             if alertState[alert] == 0:
-                # this is where we would do the actual
-                # alerts
-                alertState[alert] = 1
                 if DEBUG:
                     print "{0} Doing low bean alert {1}".format(currentTime, alert)
-                alertState.sync()
+                if alert == 'twitter':
+                    hashTags = " ".join(["#"+m for m in cfg['twitterConfiguration']['twitterAlertHashtags']])
+                    tweet   = cfg['twitterConfiguration']['twitterAlertMessage']+" "+ hashTags
+                    tweet   = tweet.format(beans,currentTime)
+
+                    print tweet
+
+                if alert == 'email':
+                    subject = cfg['emailConfiguration']['emailAlertSubject']
+                    body    = cfg['emailConfiguration']['emailAlertMessage'].format(beans,currentTime)
+
+                    print "Subject:",subject
+                    print "\n",body
+
+                alertState[alert] = 1
+        alertState.sync()
 
     # reset all of the alert channel states to 0 if we are 10%
     # above the bean limit and if we had previously set the alert
