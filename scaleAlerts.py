@@ -20,7 +20,7 @@ def processAlerts (fsr, alertState, cfg, currentTime):
     # channel states
     if fsr > (cfg['raspberryPiConfig']['getMoarBeansNow'] * 1.1) and sum([alertState[m] for m in alertState]) > 0:
         if DEBUG:
-            print "plenty of beans; resetting alerts"
+            print "{0} plenty of beans; resetting alerts".format(currentTime)
             for alert in alertState:
                 alertState[alert] = 0
             alertState.sync()
