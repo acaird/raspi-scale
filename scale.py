@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import yaml
+import shelve
 import scaleConfig
 import scaleTwitter
 import argparse
@@ -173,7 +174,18 @@ while cfg['raspberryPiConfig']['updateTime'] % cfg['raspberryPiConfig']['checkTi
 if oTime != cfg['raspberryPiConfig']['updateTime'] and DEBUG:
         print "\"updateTime\" changed from {0} to {1} so it would divide evenly by \"checkTime\".".format(oTime, cfg['raspberryPiConfig']['updateTime'])
 
+# This totally isn't a clock, it's a counter.  But we use it sort of
+# like a clock.
 scaleClock = 0
+
+# Python shelves let us keep some state between runs; in this case, we
+# are keeping the state of the alerts we have generated, so we don't
+# re-send emails or tweets if one has already been sent for a given
+# state
+alertState = shelve.open("scaleState", writeback=True)
+for alert in cfg['raspberryPiConfig']['alertChannels']:
+        if alert not in alertState:
+                alertState[alert] = 0
 
 if DEBUG:
 	print "Ready."
@@ -222,7 +234,7 @@ while True:
                                                  twitterCredentials['consumerSec'],
                                                  tweet)
 
-
         scaleClock += cfg['raspberryPiConfig']['checkTime']
+
 
         time.sleep(cfg['raspberryPiConfig']['checkTime'])
