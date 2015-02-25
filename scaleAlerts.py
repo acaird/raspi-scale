@@ -15,10 +15,12 @@ def processAlerts (fsr, alertState, cfg, currentTime):
                     print "{0} Doing alert {1}".format(currentTime, alert)
                 alertState.sync()
 
-        # reset all of the alert channel states to 0 if we are 10%
-        # above the bean limit and if we had previously set the alert
-        # channel states
-        if fsr > (cfg['raspberryPiConfig']['getMoarBeansNow'] * 1.1) and sum([alertState[m] for m in alertState]) > 0:
+    # reset all of the alert channel states to 0 if we are 10%
+    # above the bean limit and if we had previously set the alert
+    # channel states
+    if fsr > (cfg['raspberryPiConfig']['getMoarBeansNow'] * 1.1) and sum([alertState[m] for m in alertState]) > 0:
+        if DEBUG:
+            print "plenty of beans; resetting alerts"
             for alert in alertState:
                 alertState[alert] = 0
             alertState.sync()
@@ -42,7 +44,11 @@ if __name__ == "__main__":
                          "the value in the configuration file ")
     parser.add_argument("-c","--config", action="store", dest="configFile",
                         help="specify a configuration file")
+    parser.add_argument("-f","--fsr", action="store", dest="fsr", type=int,
+                        help="specify a fake FSR value (default=230)", default=230)
     args = parser.parse_args()
+
+    fsr = args.fsr
 
     if args.configFile:
 	configFile = args.configFile
@@ -55,13 +61,12 @@ if __name__ == "__main__":
 	DEBUG = args.debug
 
     alertState = shelve.open("scaleState", writeback=True)
+
     for alert in cfg['raspberryPiConfig']['alertChannels']:
         if alert not in alertState:
             alertState[alert] = 0
     alertState.sync()
 
-    fsr = 230
     currentTime = str(datetime.datetime.now()).split('.')[0]
-
 
     processAlerts (fsr, alertState, cfg, currentTime)
