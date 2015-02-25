@@ -1,5 +1,5 @@
 
-def processAlerts (fsr, alertState, cfg, currentTime):
+def processLowBeanAlerts (fsr, alertState, cfg, currentTime):
 
     # set the alertStates to 1 (alerted) and do the necessary
     # alerts if we seem to have too few beans
