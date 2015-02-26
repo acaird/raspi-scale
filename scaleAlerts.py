@@ -15,14 +15,21 @@ def processLowBeanAlerts (fsr, alertState, cfg, currentTime):
                     tweet   = cfg['twitterConfiguration']['twitterAlertMessage']+" "+ hashTags
                     tweet   = tweet.format(beans,currentTime)
 
-                    print tweet
+                    scaleTwitter.tweetStatus(cfg['twitterConfiguration']['twitterCredsFile'],
+                                             tweet)
 
                 if alert == 'email':
                     subject = cfg['emailConfiguration']['emailAlertSubject']
                     body    = cfg['emailConfiguration']['emailAlertMessage'].format(beans,currentTime)
 
-                    print "Subject:",subject
-                    print "\n",body
+                    # print "Subject:",subject
+                    # print "\n",body
+
+                    scaleEmail.sendEmail (cfg['emailConfiguration']['smtpServer'],
+                                          cfg['emailConfiguration']['gmailCredsFile'],
+                                          cfg['emailConfiguration']['fromAddr'],
+                                          cfg['emailConfiguration']['toAddr'],
+                                          subject, body)
 
                 alertState[alert] = 1
         alertState.sync()
@@ -44,6 +51,7 @@ if __name__ == "__main__":
     import shelve
     import scaleConfig
     import scaleTwitter
+    import scaleEmail
     import argparse
     import datetime
 
