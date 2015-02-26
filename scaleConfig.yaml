@@ -126,9 +126,12 @@ emailAlertMessage: >-
   This is your friendly BeanBot letting you know that it looks like
   you are low on beans.
 
+
   According to the bean weight sensor, you have {0}% of beans left.
 
+
   It is {1} and I hope you have time to get more beans soon.
+
 
   Happy coffeeing!
 
