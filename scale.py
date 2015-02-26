@@ -236,6 +236,16 @@ while True:
 
                         scaleTwitter.tweetStatus(cfg['twitterConfiguration']['twitterCredsFile'],
                                                  tweet)
+                if 'email' in cfg['raspberryPiConfig']['updateChannels']:
+                        subject = cfg['emailConfiguration']['emailUpdateSubject']
+                        body    = cfg['emailConfiguration']['emailUpdateMessage'].format(beans)
+
+                        scaleEmail.sendEmail (cfg['emailConfiguration']['smtpServer'],
+                                              cfg['emailConfiguration']['gmailCredsFile'],
+                                              cfg['emailConfiguration']['fromAddr'],
+                                              cfg['emailConfiguration']['toAddr'],
+                                              subject, body)
+
 
         scaleClock += cfg['raspberryPiConfig']['checkTime']
 

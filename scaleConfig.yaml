@@ -135,6 +135,18 @@ emailAlertMessage: >-
 
   Happy coffeeing!
 
+emailUpdateSubject: Coffee Bean Status
+emailUpdateMessage: >-
+  According to your weight sensor, you have {0}% of beans left.
+
+
+  Hello, this is your friendly BeanBot updating you on your coffee
+  bean status.  You have {0}% left, so there is no alert at this time,
+  but I will let you know if you get low (based on your configured
+  options).
+
+  Happy coffeeing!
+
 ---
 # The settings for sending Twitter notifications of being low on
 # beans

@@ -28,6 +28,8 @@ def setDefaults():
           'toAddr':'',
           'emailAlertMessage': 'This is your friendly BeanBot letting you know that it looks like you are low on beans.\n\nAccording to the bean weight sensor, you have {0}% of beans left.\n\nIt is {1} and I hope you have time to get more beans soon.\n\nHappy coffeeing!',
           'emailAlertSubject': 'Low Bean Alert!',
+          'emailUpdateSubject': 'Coffee Bean Status',
+          'emailUpdateMessage': 'According to your weight sensor, you have {0}% of beans left.\n\nHello, this is your friendly BeanBot updating you on your coffee bean status.  You have {0}% left, so there is no alert at this time, but I will let you know if you get low (based on your configured options).\nHappy coffeeing!'
          },
          'twitterConfiguration':
          {'twitterCredsFile': './twitterCreds.sec',
