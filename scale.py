@@ -2,7 +2,6 @@
 import yaml
 import shelve
 import scaleConfig
-import scaleTwitter
 import argparse
 
 '''
@@ -106,7 +105,9 @@ import datetime
 import os
 import RPi.GPIO as GPIO
 import scalePlotly
-
+import scaleTwitter
+import scaleEmail
+import scaleAlert
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False) # to stop the "This channel is already in use" warning
@@ -211,6 +212,11 @@ while True:
                                         plotlyConfig['username'],
                                         plotlyConfig['apikey'])
 
+                # I think we only need to check the alert status after
+                # changes, within tolerance and maxChange
+                scaleAlerts.processLowBeanAlerts (fsr, alertState, cfg, currentTime)
+
+
         if scaleClock % cfg['raspberryPiConfig']['updateTime'] == 0:
                 last_read = fsr
                 beans = int((fsr/1024.)*100)
@@ -228,13 +234,9 @@ while True:
                         tweet   = cfg['twitterConfiguration']['twitterUpdateMessage']+" "+ hashTags
 			tweet = tweet.format(beans,currentTime)
 
-                        scaleTwitter.tweetStatus(twitterCredentials['accessToken'],
-                                                 twitterCredentials['accessSecret'],
-                                                 twitterCredentials['consumerKey'],
-                                                 twitterCredentials['consumerSec'],
+                        scaleTwitter.tweetStatus(cfg['twitterConfiguration']['twitterCredsFile'],
                                                  tweet)
 
         scaleClock += cfg['raspberryPiConfig']['checkTime']
-
 
         time.sleep(cfg['raspberryPiConfig']['checkTime'])
