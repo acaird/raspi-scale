@@ -107,7 +107,7 @@ import RPi.GPIO as GPIO
 import scalePlotly
 import scaleTwitter
 import scaleEmail
-import scaleAlert
+import scaleAlerts
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False) # to stop the "This channel is already in use" warning
