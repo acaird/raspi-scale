@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import yaml
 import shelve
+import logging
 import scaleConfig
 import argparse
 
