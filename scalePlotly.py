@@ -34,12 +34,10 @@ if __name__ == "__main__":
     try:
         f = open(plotlyConfigFile)
     except:
-        print "=========================== ERROR ==========================="
-        print "I couldn't open the file '{0}'".format(plotlyConfigFile)
-        print "to read the plot.ly settings, so I can't make a plot and"
-        print "am giving up."
-        print "(I am:", os.path.abspath(os.path.dirname(sys.argv[0]))+"/"+sys.argv[0],")"
-        print "=========================== ERROR ==========================="
+        errorString = '''I couldn't open the file {0} to read the GMail credentials, so I'm giving up (Logged from {1}/{2})
+        '''.format(plotlyConfigFile,os.path.abspath(os.path.dirname(sys.argv[0])),sys.argv[0])
+
+        logging.error(errorString)
         exit (1)
 
     plotlyConfig = yaml.safe_load(f)
