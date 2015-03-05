@@ -76,12 +76,8 @@ cfg = scaleConfig.readConfig(configFile)
 try:
         f = open(cfg['raspberryPiConfig']['plotlyCredsFile'])
 except:
-        print "=========================== ERROR ==========================="
-        print "I couldn't open the file '{0}'".format(cfg['raspberryPiConfig']['plotlyCredsFile'])
-        print "to read the plot.ly settings, so I can't make a plot and"
-        print "am giving up."
-        print "(I am:", os.path.abspath(os.path.dirname(sys.argv[0]))+"/"+sys.argv[0],")"
-        print "=========================== ERROR ==========================="
+        logging.error("I couldn't open the file %s to read the plot.ly settings, so I can't make a plot and am giving up. I am %s/%s",
+                      cfg['raspberryPiConfig']['plotlyCredsFile'], os.path.abspath(os.path.dirname(sys.argv[0])),sys.argv[0])
         exit (1)
 
 plotlyConfig = yaml.safe_load(f)
@@ -89,11 +85,12 @@ f.close()
 
 if args.debug == None:
 	DEBUG = cfg['raspberryPiConfig']['debug']
+        logging.basicConfig(level=logging.DEBUG)
 else:
 	DEBUG = args.debug
+        logging.basicConfig(level=logging.DEBUG)
 
-if DEBUG:
-	print "Initializing."
+logging.debug("Initializing.")
 
 if not cfg['raspberryPiConfig']['alertChannels']:
 	cfg['raspberryPiConfig']['alertChannels'] = ''
@@ -150,31 +147,30 @@ logString = '{0} {1}\tfsr: {2:4d}\tlast_value: {3:4d}\tchange: {4:4d}\tbeans: {5
 # If we will need Twitter credentials, read them now
 #
 if 'twitter' in cfg['raspberryPiConfig']['alertChannels'] or 'twitter' in cfg['raspberryPiConfig']['updateChannels']:
-	if DEBUG:
-		print "Reading Twitter credentials from ",cfg['twitterConfiguration']['twitterCredsFile']
+
+        logging.debug ("Reading Twitter credentials from ",cfg['twitterConfiguration']['twitterCredsFile'])
 
         try:
                 f = open(cfg['twitterConfiguration']['twitterCredsFile'])
                 twitterCredentials = yaml.safe_load(f)
                 f.close()
         except:
-                if DEBUG:
-                        print "=========================== ERROR ==========================="
-                        print "I couldn't open the file '{0}'".format(cfg['twitterConfiguration']['twitterCredsFile'])
-                        print "to read the twitter credentials, so I can't tweet."
-                        print "(I am:", os.path.abspath(os.path.dirname(sys.argv[0]))+"/"+sys.argv[0],")"
-                        print "=========================== ERROR ==========================="
+                logging.error("I couldn't open the file %s to read the twitter credentials, so I can't tweet. I am: %s/%s",
+                              cfg['twitterConfiguration']['twitterCredsFile'],
+                              os.path.abspath(os.path.dirname(sys.argv[0])),
+                              sys.argv[0])
 
-			cfg['raspberryPiConfig']['alertChannels'].remove('twitter')
-			cfg['raspberryPiConfig']['updateChannels'].remove('twitter')
+                cfg['raspberryPiConfig']['alertChannels'].remove('twitter')
+                cfg['raspberryPiConfig']['updateChannels'].remove('twitter')
 
 oTime = cfg['raspberryPiConfig']['updateTime']
 
 while cfg['raspberryPiConfig']['updateTime'] % cfg['raspberryPiConfig']['checkTime']:
         cfg['raspberryPiConfig']['updateTime'] += 1
 
-if oTime != cfg['raspberryPiConfig']['updateTime'] and DEBUG:
-        print "\"updateTime\" changed from {0} to {1} so it would divide evenly by \"checkTime\".".format(oTime, cfg['raspberryPiConfig']['updateTime'])
+if oTime != cfg['raspberryPiConfig']['updateTime']:
+        logging.debug ("\"updateTime\" changed from %s to %s so it would divide evenly by \"checkTime\".",
+                       oTime, cfg['raspberryPiConfig']['updateTime']))
 
 # This totally isn't a clock, it's a counter.  But we use it sort of
 # like a clock.
@@ -189,8 +185,7 @@ for alert in cfg['raspberryPiConfig']['alertChannels']:
         if alert not in alertState:
                 alertState[alert] = 0
 
-if DEBUG:
-	print "Ready."
+logging.debug ("Ready.")
 
 while True:
 
@@ -204,10 +199,9 @@ while True:
         if fsr_change > cfg['raspberryPiConfig']['maxChange'] and ( abs(fsr_change) > tolerance ):
                 last_read = fsr
                 beans = int((fsr/1024.)*100)
-                if DEBUG:
-                        print logString.format(currentTime, "CHANGE",
-                                               fsr, last_read,
-                                               fsr_change, beans)
+                logging.debug (logString.format(currentTime, "CHANGE",
+                                                fsr, last_read,
+                                                fsr_change, beans))
                 scalePlotly.updatePlot (currentTime,
                                         beans,
                                         plotlyConfig['username'],
@@ -221,10 +215,9 @@ while True:
         if scaleClock % cfg['raspberryPiConfig']['updateTime'] == 0:
                 last_read = fsr
                 beans = int((fsr/1024.)*100)
-                if DEBUG:
-                        print logString.format(currentTime, "UPDATE",
-                                               fsr, last_read,
-                                               fsr_change, beans)
+                logging.debug (logString.format(currentTime, "UPDATE",
+                                                fsr, last_read,
+                                                fsr_change, beans))
                 if 'plotly' in cfg['raspberryPiConfig']['updateChannels']:
                         scalePlotly.updatePlot (currentTime,
                                                 beans,
