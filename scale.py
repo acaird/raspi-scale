@@ -170,7 +170,7 @@ while cfg['raspberryPiConfig']['updateTime'] % cfg['raspberryPiConfig']['checkTi
 
 if oTime != cfg['raspberryPiConfig']['updateTime']:
         logging.debug ("\"updateTime\" changed from %s to %s so it would divide evenly by \"checkTime\".",
-                       oTime, cfg['raspberryPiConfig']['updateTime']))
+                       oTime, cfg['raspberryPiConfig']['updateTime'])
 
 # This totally isn't a clock, it's a counter.  But we use it sort of
 # like a clock.
