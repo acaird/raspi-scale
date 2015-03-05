@@ -6,7 +6,7 @@ import sys, os
 def tweetStatus(twitterCredsFile, tweet):
 
     if (len(tweet)>140):
-        print >> sys.stderr, "Tweet is longer than 140 characters, can't send"
+        logging.error ("Tweet is longer than 140 characters, can't send")
         return(0)
 
     import twitter
@@ -16,12 +16,11 @@ def tweetStatus(twitterCredsFile, tweet):
         twitterCredentials = yaml.safe_load(f)
         f.close()
     except:
-        print "=========================== ERROR ==========================="
-        print "I couldn't open the file '{0}'".format(emailConfigFile)
-        print "to read the twitter credentials, or maybe I couldn't log in, "
-        print "so I can't tweet and am giving up."
-        print "(I am:", os.path.abspath(os.path.dirname(sys.argv[0]))+"/"+sys.argv[0],")"
-        print "=========================== ERROR ==========================="
+        errorString = '''I couldn't open the file {0} to read the Twitter credentials, so I'm giving up (Logged from {1}/{2})
+        '''.format(twitterCredsFile,os.path.abspath(os.path.dirname(sys.argv[0])),sys.argv[0])
+
+        logging.error(errorString)
+
         exit (1)
 
 
@@ -37,6 +36,7 @@ if __name__ == "__main__":
 
     import argparse
     import scaleConfig
+    import logging
 
     configFile = './scaleConfig.yaml'
 

@@ -30,12 +30,11 @@ def sendEmail (smtpServer, gmailCreds, fAddr, tAddr, subj, body):
             with open(gmailCreds) as f:
                 creds = [x.strip('\n') for x in f.readlines()]
         except:
-            print "=========================== ERROR ==========================="
-            print "I couldn't open the file '{0}'".format(gmailCreds)
-            print "to read your GMail login and password, so I can't send"
-            print "email using the GMail SMTP server, and am giving up."
-            print "(", os.path.abspath(os.path.dirname(sys.argv[0]))+"/"+sys.argv[0],")"
-            print "=========================== ERROR ==========================="
+            errorString = '''I couldn't open the file {0} to read the GMail credentials, so I'm giving up (Logged from {1}/{2})
+            '''.format(gmailCreds,os.path.abspath(os.path.dirname(sys.argv[0])),sys.argv[0])
+
+            logging.error(errorString)
+
             exit (1)
 
         s.starttls()
@@ -51,17 +50,18 @@ def sendEmail (smtpServer, gmailCreds, fAddr, tAddr, subj, body):
 
 if __name__ == "__main__":
 
+    import logging
+
     emailConfigFile = './emailConfig.yaml'
 
     try:
         f = open(emailConfigFile)
     except:
-        print "=========================== ERROR ==========================="
-        print "I couldn't open the file '{0}'".format(emailConfigFile)
-        print "to read the email settings, so I can't send email and"
-        print "am giving up."
-        print "(I am:", os.path.abspath(os.path.dirname(sys.argv[0]))+"/"+sys.argv[0],")"
-        print "=========================== ERROR ==========================="
+        errorString = '''I couldn't open the file {0} to read the email settings, so I'm giving up (Logged from {1}/{2})
+        '''.format(emailConfigFile,os.path.abspath(os.path.dirname(sys.argv[0])),sys.argv[0])
+
+        logging.error(errorString)
+
         exit (1)
 
     emailConfig = yaml.safe_load(f)
@@ -77,4 +77,4 @@ do with this formatting.'''
                          emailConfig['fromAddr'],   emailConfig['toAddr'],
                          subject, body)
     if (results):
-        print "Delivery Failed, at least in part:",results
+        logging.warning ("Delivery Failed, at least in part: %s",results)

@@ -48,12 +48,9 @@ def readConfig (file):
     try:
         f = open(file)
     except:
-        print "=========================== ERROR ==========================="
-        print "I couldn't open the file '{0}'".format(file)
-        print "to read the settings, so I'll have to think of"
-        print "something else to do."
-        print "(I am:", os.path.abspath(os.path.dirname(sys.argv[0]))+"/"+sys.argv[0],")"
-        print "=========================== ERROR ==========================="
+        errorString = '''I couldn't open the file {0} to read the settings, so I'll use the defaults. (Logged from {1}/{2})
+        '''.format(file,os.path.abspath(os.path.dirname(sys.argv[0])),sys.argv[0])
+        logging.warning(errorString)
         exit (1)
 
     # this is list() to make the load_all generator generate
@@ -76,18 +73,22 @@ def readConfig (file):
 if __name__ == "__main__":
 
     import pprint as pp
+    import logging
 
-    configFile = './scaleConfig.yaml'
+    configFile = './scaleConfig.yaml1'
 
     cfg = readConfig(configFile)
 
-    print "The debug setting is",cfg['raspberryPiConfig']['debug']
+    if cfg['raspberryPiConfig']['debug']:
+        logging.basicConfig(level=logging.DEBUG)
 
-    print "And everything else is:"
+    logging.warning("The debug setting is %s",cfg['raspberryPiConfig']['debug'])
 
-    pp.pprint(cfg)
+    logging.debug("And everything else is:")
+
+    logging.debug(pp.pformat(cfg))
 
     if 'plotly' in cfg['raspberryPiConfig']['alertChannels']:
-        print "Alert: Plot.ly"
+        logging.debug("Alert: Plot.ly")
     else:
-        print "Alert: no Plot.ly"
+        logging.debug("Alert: no Plot.ly")

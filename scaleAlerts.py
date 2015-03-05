@@ -8,8 +8,7 @@ def processLowBeanAlerts (fsr, alertState, cfg, currentTime):
     if fsr < cfg['raspberryPiConfig']['getMoarBeansNow']:
         for alert in cfg['raspberryPiConfig']['alertChannels']:
             if alertState[alert] == 0:
-                if DEBUG:
-                    print "{0} Doing low bean alert {1}".format(currentTime, alert)
+                logging.debug ("%s Doing low bean alert %s",currentTime, alert)
                 if alert == 'twitter':
                     hashTags = " ".join(["#"+m for m in cfg['twitterConfiguration']['twitterAlertHashtags']])
                     tweet   = cfg['twitterConfiguration']['twitterAlertMessage']+" "+ hashTags
@@ -21,9 +20,6 @@ def processLowBeanAlerts (fsr, alertState, cfg, currentTime):
                 if alert == 'email':
                     subject = cfg['emailConfiguration']['emailAlertSubject']
                     body    = cfg['emailConfiguration']['emailAlertMessage'].format(beans,currentTime)
-
-                    # print "Subject:",subject
-                    # print "\n",body
 
                     scaleEmail.sendEmail (cfg['emailConfiguration']['smtpServer'],
                                           cfg['emailConfiguration']['gmailCredsFile'],
@@ -38,13 +34,10 @@ def processLowBeanAlerts (fsr, alertState, cfg, currentTime):
     # above the bean limit and if we had previously set the alert
     # channel states
     if fsr > (cfg['raspberryPiConfig']['getMoarBeansNow'] * 1.1) and sum([alertState[m] for m in alertState]) > 0:
-        if DEBUG:
-            print "{0} plenty of beans; resetting alerts".format(currentTime)
-            for alert in alertState:
-                alertState[alert] = 0
-            alertState.sync()
-
-
+        logging.debug ("%s plenty of beans; resetting alerts",currentTime)
+        for alert in alertState:
+            alertState[alert] = 0
+        alertState.sync()
 
 if __name__ == "__main__":
     import yaml
@@ -54,6 +47,7 @@ if __name__ == "__main__":
     import scaleEmail
     import argparse
     import datetime
+    import logging
 
     configFile = './scaleConfig.yaml'
 
