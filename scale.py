@@ -85,10 +85,10 @@ f.close()
 
 if args.debug == None:
 	DEBUG = cfg['raspberryPiConfig']['debug']
-        logging.basicConfig(level=logging.DEBUG)
+        logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
 else:
 	DEBUG = args.debug
-        logging.basicConfig(level=logging.DEBUG)
+        logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
 
 logging.debug("Initializing.")
 
