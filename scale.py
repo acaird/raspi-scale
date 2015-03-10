@@ -75,13 +75,12 @@ cfg = scaleConfig.readConfig(configFile)
 
 try:
         f = open(cfg['raspberryPiConfig']['plotlyCredsFile'])
+        plotlyConfig = yaml.safe_load(f)
+        f.close()
 except:
         logging.error("I couldn't open the file %s to read the plot.ly settings, so I can't make a plot and am giving up. I am %s/%s",
                       cfg['raspberryPiConfig']['plotlyCredsFile'], os.path.abspath(os.path.dirname(sys.argv[0])),sys.argv[0])
         exit (1)
-
-plotlyConfig = yaml.safe_load(f)
-f.close()
 
 if args.debug == None:
 	DEBUG = cfg['raspberryPiConfig']['debug']
