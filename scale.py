@@ -73,6 +73,13 @@ if args.configFile:
 
 cfg = scaleConfig.readConfig(configFile)
 
+if args.debug == None:
+	DEBUG = cfg['raspberryPiConfig']['debug']
+        logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
+else:
+	DEBUG = args.debug
+        logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
+
 try:
         f = open(cfg['raspberryPiConfig']['plotlyCredsFile'])
         plotlyConfig = yaml.safe_load(f)
@@ -81,13 +88,6 @@ except:
         logging.error("I couldn't open the file %s to read the plot.ly settings, so I can't make a plot and am giving up. I am %s/%s",
                       cfg['raspberryPiConfig']['plotlyCredsFile'], os.path.abspath(os.path.dirname(sys.argv[0])),sys.argv[0])
         exit (1)
-
-if args.debug == None:
-	DEBUG = cfg['raspberryPiConfig']['debug']
-        logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
-else:
-	DEBUG = args.debug
-        logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
 
 logging.debug("Initializing.")
 
