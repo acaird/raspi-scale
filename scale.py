@@ -1,9 +1,4 @@
 #!/usr/bin/env python
-import yaml
-import shelve
-import logging
-import scaleConfig
-import argparse
 
 '''
 This is mostly from:
@@ -57,7 +52,7 @@ def readadc(adcnum, clockpin, mosipin, misopin, cspin):
         adcout >>= 1       # first bit is 'null' so drop it
         return adcout
 
-def main():
+def initialize():
 
         configFile = './scaleConfig.yaml'
 
@@ -245,5 +240,11 @@ def mainLoop():
                 time.sleep(cfg['raspberryPiConfig']['checkTime'])
 
 if __name__ == "__main__":
-        main()
+        import yaml
+        import shelve
+        import logging
+        import scaleConfig
+        import argparse
+
+        initialize()
         mainLoop()
