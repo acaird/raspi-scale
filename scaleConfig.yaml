@@ -109,6 +109,22 @@ gmailCredsFile: ./gmailCreds.sec
 # Set the to and from addresses for the email; the fromAddr doesn't
 # much matter, the toAddr determines who gets the warnings about a low
 # bean situation
+#
+# if you want text messages, try these addresses:
+#      Boost Mobile: PhoneNumber@myboostmobile.com
+#      T-Mobile: PhoneNumber@tmomail.net
+#      Virgin Mobile: PhoneNumber@vmobl.com
+#      Cingular: PhoneNumber@cingularme.com
+#      Sprint Nextel: PhoneNumber@messaging.sprintpcs.com
+#      Verizon: PhoneNumber@vtext.com
+#      Nextel: PhoneNumber@messaging.nextel.com
+#      US Cellular: PhoneNumber@email.uscc.net
+#      SunCom: PhoneNumber@tms.suncom.com
+#      Powertel: PhoneNumber@ptel.net
+#      AT&T (Cingular): PhoneNumber@txt.att.net
+#      Alltel: PhoneNumber@message.alltel.com
+#      Metro PCS: PhoneNumber@MyMetroPcs.com
+# there are more at: http://www.example-code.com/python/sms_send.asp
 
 fromAddr:   acaird@gmail.com
 toAddr:     acaird@gmail.com
