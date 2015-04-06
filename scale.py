@@ -72,10 +72,13 @@ def initialize():
 
         if args.debug == None:
                 DEBUG = cfg['raspberryPiConfig']['debug']
-                logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
         else:
                 DEBUG = args.debug
-                logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
+	if DEBUG:
+		logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
+	else:
+		logging.basicConfig(filename="scale.log",level=logging.DEBUG,
+				    format='%(asctime)s %(message)s')
 
         logging.debug("Initializing.")
 
