@@ -143,8 +143,7 @@ def initialize():
         # If we will need Twitter credentials, read them now
         #
         if 'twitter' in cfg['raspberryPiConfig']['alertChannels'] or 'twitter' in cfg['raspberryPiConfig']['updateChannels']:
-                logging.debug ("Reading Twitter credentials from ",cfg['twitterConfiguration']['twitterCredsFile'])
-
+		logging.debug ("Reading Twitter credentials from {}".format(cfg['twitterConfiguration']['twitterCredsFile']))
                 try:
                         f = open(cfg['twitterConfiguration']['twitterCredsFile'])
                         twitterCredentials = yaml.safe_load(f)
