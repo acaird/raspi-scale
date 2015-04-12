@@ -62,15 +62,15 @@ class Scale(Daemon):
 
                 parser = argparse.ArgumentParser()
                 parser.add_argument ("-d", "--debug", type=int, choices=[0,1],
-                		     nargs='?', const=1,
-                		     help="turn debugging on (1) or off (0); this overrides"+
-                		     "the value in the configuration file ")
+                                     nargs='?', const=1,
+                                     help="turn debugging on (1) or off (0); this overrides"+
+                                     "the value in the configuration file ")
                 parser.add_argument("-c","--config", action="store", dest="configFile",
-                		    help="specify a configuration file")
+                                    help="specify a configuration file")
                 args = parser.parse_args()
 
                 if args.configFile:
-                	configFile = args.configFile
+                        configFile = args.configFile
 
                 cfg = scaleConfig.readConfig(configFile)
 
@@ -78,11 +78,11 @@ class Scale(Daemon):
                         DEBUG = cfg['raspberryPiConfig']['debug']
                 else:
                         DEBUG = args.debug
-        	if DEBUG:
-        		logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
-        	else:
-        		logging.basicConfig(filename="scale.log",level=logging.DEBUG,
-        				    format='%(asctime)s %(message)s')
+                if DEBUG:
+                        logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
+                else:
+                        logging.basicConfig(filename="scale.log",level=logging.DEBUG,
+                                            format='%(asctime)s %(message)s')
 
                 logging.debug("Initializing.")
 
@@ -104,7 +104,7 @@ class Scale(Daemon):
                 import os
                 import RPi.GPIO as GPIO
 
-		global GPIO
+                global GPIO
                 GPIO.setmode(GPIO.BCM)
                 GPIO.setwarnings(False) # to stop the "This channel is already in use" warning
 
@@ -115,7 +115,7 @@ class Scale(Daemon):
                 args.SPICLK    =    cfg['raspberryPiConfig']['ADCtoCobbler']['SPICLK']
                 args.SPIMISO   =    cfg['raspberryPiConfig']['ADCtoCobbler']['SPIMISO']
                 args.SPIMOSI   =    cfg['raspberryPiConfig']['ADCtoCobbler']['SPIMOSI']
-		args.SPICS     =    cfg['raspberryPiConfig']['ADCtoCobbler']['SPICS']
+                args.SPICS     =    cfg['raspberryPiConfig']['ADCtoCobbler']['SPICS']
                 # Diagram of ADC (MCP3008) is at:
                 #   https://learn.adafruit.com/
                 #     reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi/
@@ -140,7 +140,7 @@ class Scale(Daemon):
                 # If we will need Twitter credentials, read them now
                 #
                 if 'twitter' in cfg['raspberryPiConfig']['alertChannels'] or 'twitter' in cfg['raspberryPiConfig']['updateChannels']:
-        		logging.debug ("Reading Twitter credentials from {}".format(cfg['twitterConfiguration']['twitterCredsFile']))
+                        logging.debug ("Reading Twitter credentials from {}".format(cfg['twitterConfiguration']['twitterCredsFile']))
                         try:
                                 f = open(cfg['twitterConfiguration']['twitterCredsFile'])
                                 twitterCredentials = yaml.safe_load(f)
@@ -165,7 +165,7 @@ class Scale(Daemon):
 
                 # This totally isn't a clock, it's a counter.  But we use it sort of
                 # like a clock.
-		args.scaleClock = 0
+                args.scaleClock = 0
 
                 # Python shelves let us keep some state between runs; in this case, we
                 # are keeping the state of the alerts we have generated, so we don't
@@ -177,12 +177,12 @@ class Scale(Daemon):
                                 args.alertState[alert] = 0
 
                 logging.debug ("Ready.")
-		return args,cfg
+                return args,cfg
 
         def mainLoop(self,args,cfg):
 
                 last_read = 0
-		import time
+                import time
 
                 while True:
 
@@ -197,8 +197,8 @@ class Scale(Daemon):
                                 last_read = fsr
                                 beans = int((fsr/1024.)*100)
                                 logging.debug (args.logString.format(currentTime, "CHANGE",
-								     fsr, last_read,
-								     fsr_change, beans))
+                                                                     fsr, last_read,
+                                                                     fsr_change, beans))
                                 scalePlotly.updatePlot (currentTime,
                                                         beans,
                                                         args.plotlyConfig['username'],
@@ -213,13 +213,13 @@ class Scale(Daemon):
                                 last_read = fsr
                                 beans = int((fsr/1024.)*100)
                                 logging.debug (args.logString.format(currentTime, "UPDATE",
-								     fsr, last_read,
-								     fsr_change, beans))
+                                                                     fsr, last_read,
+                                                                     fsr_change, beans))
                                 if 'plotly' in cfg['raspberryPiConfig']['updateChannels']:
                                         scalePlotly.updatePlot (currentTime,
                                                                 beans,
                                                                 args.plotlyConfig['username'],
-        							args.plotlyConfig['apikey'])
+                                                                args.plotlyConfig['apikey'])
                                 if 'twitter' in cfg['raspberryPiConfig']['updateChannels']:
                                         hashTags=" ".join(["#"+m for m in cfg['twitterConfiguration']['twitterUpdateHashtags']])
                                         tweet   = cfg['twitterConfiguration']['twitterUpdateMessage']+" "+ hashTags
@@ -238,12 +238,12 @@ class Scale(Daemon):
                                                               cfg['emailConfiguration']['toAddr'],
                                                               subject, body)
 
-			args.scaleClock += cfg['raspberryPiConfig']['checkTime']
+                        args.scaleClock += cfg['raspberryPiConfig']['checkTime']
 
-			time.sleep(cfg['raspberryPiConfig']['checkTime'])
-	def run(self):
-		args,cfg = self.initialize()
-		self.mainLoop(args,cfg)
+                        time.sleep(cfg['raspberryPiConfig']['checkTime'])
+        def run(self):
+                args,cfg = self.initialize()
+                self.mainLoop(args,cfg)
 
 if __name__ == "__main__":
         import yaml
@@ -251,15 +251,15 @@ if __name__ == "__main__":
         import logging
         import scaleConfig
         import argparse
-	import scalePlotly
-	import scaleTwitter
-	import scaleEmail
-	import scaleAlerts
+        import scalePlotly
+        import scaleTwitter
+        import scaleEmail
+        import scaleAlerts
 
-	pidfile = "/tmp/scale.pid"
-	myS = Scale(pidfile)
+        pidfile = "/tmp/scale.pid"
+        myS = Scale(pidfile)
 
-	myS.start()
+        myS.start()
 
         #args,cfg = myS.initialize()
         #myS.mainLoop(args,cfg)
