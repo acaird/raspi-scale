@@ -43,20 +43,19 @@ def setDefaults():
 
     return (c)
 
-def readConfig (file):
+def readConfig (self,file):
 
     try:
         f = open(file)
+        # this is list() to make the load_all generator generate
+        # everything and put it into config before the file is close()'d
+        configDocs = list(yaml.safe_load_all(f))
+        f.close()
     except:
         errorString = '''I couldn't open the file {0} to read the settings, so I'll use the defaults. (Logged from {1}/{2})
         '''.format(file,os.path.abspath(os.path.dirname(sys.argv[0])),sys.argv[0])
-        logging.warning(errorString)
-        exit (1)
+        self.logger.warning(errorString)
 
-    # this is list() to make the load_all generator generate
-    # everything and put it into config before the file is close()'d
-    configDocs = list(yaml.safe_load_all(f))
-    f.close()
 
     # why safe_load_all makes an array is beyond me; I must be missing
     # something, because it makes the order of the YAML file matter,

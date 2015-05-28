@@ -1,6 +1,18 @@
 #!/usr/bin/env python
-from daemonify import Daemon
 import datetime
+import time
+import yaml
+import shelve
+import logging
+import scaleConfig
+import argparse
+import scalePlotly
+import scaleTwitter
+import scaleEmail
+import scaleAlerts
+import os
+import RPi.GPIO as GPIO
+import mattdaemon
 
 '''
 This is mostly from:
@@ -19,7 +31,7 @@ idea what the license on this is.  Personally, I don't care, but
 Adafruit might.
 '''
 
-class Scale(Daemon):
+class Scale(mattdaemon.daemon):
 
         # read SPI data from MCP3008 chip, 8 possible adc's (0 thru 7)
         def readadc(self,adcnum, clockpin, mosipin, misopin, cspin):
@@ -57,7 +69,6 @@ class Scale(Daemon):
                 return adcout
 
         def initialize(self):
-
                 configFile = './scaleConfig.yaml'
 
                 parser = argparse.ArgumentParser()
@@ -67,31 +78,42 @@ class Scale(Daemon):
                                      "the value in the configuration file ")
                 parser.add_argument("-c","--config", action="store", dest="configFile",
                                     help="specify a configuration file")
+                parser.add_argument("-r","--requires-root", action="store_true", dest="configFile",
+                                    help="for Matt Daemon")
                 args = parser.parse_args()
 
                 if args.configFile:
                         configFile = args.configFile
 
-                cfg = scaleConfig.readConfig(configFile)
+		self.logger = logging.getLogger("beanscale")
+		self.logger.setLevel(logging.INFO)
+		formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+		handler = logging.FileHandler("/home/pi/scale/scaledaemon.log")
+		handler.setFormatter(formatter)
+		self.logger.addHandler(handler)
+		self.logger.info("Starting")
+
+                cfg = scaleConfig.readConfig(self,configFile)
 
                 if args.debug == None:
                         DEBUG = cfg['raspberryPiConfig']['debug']
                 else:
                         DEBUG = args.debug
-                if DEBUG:
-                        logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
-                else:
-                        logging.basicConfig(filename="scale.log",level=logging.DEBUG,
-                                            format='%(asctime)s %(message)s')
 
-                logging.debug("Initializing.")
+                # if DEBUG:
+                #         logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
+                # else:
+                #         logging.basicConfig(filename="scale.log",level=logging.DEBUG,
+                #                             format='%(asctime)s %(message)s')
+
+                logger.debug("Initializing.")
 
                 try:
                         f = open(cfg['raspberryPiConfig']['plotlyCredsFile'])
                         args.plotlyConfig = yaml.safe_load(f)
                         f.close()
                 except:
-                        logging.error("I couldn't open the file %s to read the plot.ly settings, so I can't make a plot and am giving up. I am %s/%s",
+                        logger.error("I couldn't open the file %s to read the plot.ly settings, so I can't make a plot and am giving up. I am %s/%s",
                                       cfg['raspberryPiConfig']['plotlyCredsFile'], os.path.abspath(os.path.dirname(sys.argv[0])),sys.argv[0])
                         exit (1)
 
@@ -100,9 +122,6 @@ class Scale(Daemon):
                 if not cfg['raspberryPiConfig']['updateChannels']:
                         cfg['raspberryPiConfig']['updateChannels'] = ''
 
-                import time
-                import os
-                import RPi.GPIO as GPIO
 
                 global GPIO
                 GPIO.setmode(GPIO.BCM)
@@ -140,13 +159,13 @@ class Scale(Daemon):
                 # If we will need Twitter credentials, read them now
                 #
                 if 'twitter' in cfg['raspberryPiConfig']['alertChannels'] or 'twitter' in cfg['raspberryPiConfig']['updateChannels']:
-                        logging.debug ("Reading Twitter credentials from {}".format(cfg['twitterConfiguration']['twitterCredsFile']))
+                        logger.debug ("Reading Twitter credentials from {}".format(cfg['twitterConfiguration']['twitterCredsFile']))
                         try:
                                 f = open(cfg['twitterConfiguration']['twitterCredsFile'])
                                 twitterCredentials = yaml.safe_load(f)
                                 f.close()
                         except:
-                                logging.error("I couldn't open the file %s to read the twitter credentials, so I can't tweet. I am: %s/%s",
+                                logger.error("I couldn't open the file %s to read the twitter credentials, so I can't tweet. I am: %s/%s",
                                               cfg['twitterConfiguration']['twitterCredsFile'],
                                               os.path.abspath(os.path.dirname(sys.argv[0])),
                                               sys.argv[0])
@@ -160,7 +179,7 @@ class Scale(Daemon):
                         cfg['raspberryPiConfig']['updateTime'] += 1
 
                 if oTime != cfg['raspberryPiConfig']['updateTime']:
-                        logging.debug ("\"updateTime\" changed from %s to %s so it would divide evenly by \"checkTime\".",
+                        logger.debug ("\"updateTime\" changed from %s to %s so it would divide evenly by \"checkTime\".",
                                        oTime, cfg['raspberryPiConfig']['updateTime'])
 
                 # This totally isn't a clock, it's a counter.  But we use it sort of
@@ -176,13 +195,16 @@ class Scale(Daemon):
                         if alert not in args.alertState:
                                 args.alertState[alert] = 0
 
-                logging.debug ("Ready.")
+                logger.debug ("Ready.")
                 return args,cfg
 
-        def mainLoop(self,args,cfg):
+        def mainloop(self,args,cfg):
+
+		print "in 'mainloop'..."
+
+		# self.initialize()
 
                 last_read = 0
-                import time
 
                 while True:
 
@@ -196,7 +218,7 @@ class Scale(Daemon):
                         if fsr_change > cfg['raspberryPiConfig']['maxChange'] and ( abs(fsr_change) > args.tolerance ):
                                 last_read = fsr
                                 beans = int((fsr/1024.)*100)
-                                logging.debug (args.logString.format(currentTime, "CHANGE",
+                                logger.debug (args.logString.format(currentTime, "CHANGE",
                                                                      fsr, last_read,
                                                                      fsr_change, beans))
                                 scalePlotly.updatePlot (currentTime,
@@ -212,7 +234,7 @@ class Scale(Daemon):
                         if args.scaleClock % cfg['raspberryPiConfig']['updateTime'] == 0:
                                 last_read = fsr
                                 beans = int((fsr/1024.)*100)
-                                logging.debug (args.logString.format(currentTime, "UPDATE",
+                                logger.debug (args.logString.format(currentTime, "UPDATE",
                                                                      fsr, last_read,
                                                                      fsr_change, beans))
                                 if 'plotly' in cfg['raspberryPiConfig']['updateChannels']:
@@ -243,23 +265,14 @@ class Scale(Daemon):
                         time.sleep(cfg['raspberryPiConfig']['checkTime'])
         def run(self):
                 args,cfg = self.initialize()
+		print "Args",args
+		print "Cfg",cfg
                 self.mainLoop(args,cfg)
 
 if __name__ == "__main__":
-        import yaml
-        import shelve
-        import logging
-        import scaleConfig
-        import argparse
-        import scalePlotly
-        import scaleTwitter
-        import scaleEmail
-        import scaleAlerts
 
-        pidfile = "/tmp/scale.pid"
-        myS = Scale(pidfile)
+        pidfile = "./scale.pid"
+        myS = Scale(pidfile, root=True, daemonize=False)
 
         myS.start()
 
-        #args,cfg = myS.initialize()
-        #myS.mainLoop(args,cfg)
